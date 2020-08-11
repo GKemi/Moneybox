@@ -7,13 +7,28 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+protocol LoginView: class {
     
+}
+
+class LoginViewController: UIViewController {
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    var loginPresenter: LoginPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        loginPresenter?.loginButtonPressed(with: emailField.text, and: passwordField.text)
+    }
+    
+}
 
+extension LoginViewController: LoginView {
+    
 }

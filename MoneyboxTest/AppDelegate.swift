@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        let loginPresenter = LoginViewPresenter()
+        
+        loginVC.loginPresenter = loginPresenter
+        loginPresenter.loginView = loginVC
+        
+        window?.rootViewController = loginVC
         window?.makeKeyAndVisible()
         
         
