@@ -24,7 +24,14 @@ class LoginViewPresenter: LoginPresenter {
     
     
     func loginButtonPressed(with email: String?, and password: String?) {
-        guard let email = email, let password = password else { return }
+        guard let email = email,
+              !email.isEmpty,
+              let password = password,
+              !password.isEmpty
+        else {
+            print("Please fill in some sign in details")
+            return
+        }
         
         print("email: \(email) & pass: \(password)")
     }
