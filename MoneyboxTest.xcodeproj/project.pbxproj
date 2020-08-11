@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E53E524E2F59F0033F943 /* AppDelegate.swift */; };
+		BF2E53EF24E2F5A00033F943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2E53EE24E2F5A00033F943 /* Assets.xcassets */; };
+		BF2E53F224E2F5A00033F943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2E53F024E2F5A00033F943 /* LaunchScreen.storyboard */; };
+		BF2E53FB24E2F9FE0033F943 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E53F924E2F9FE0033F943 /* LoginViewController.swift */; };
+		BF2E53FC24E2F9FE0033F943 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF2E53FA24E2F9FE0033F943 /* LoginViewController.xib */; };
+		BF2E540424E2FD5E0033F943 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E540224E2FD5E0033F943 /* AccountsViewController.swift */; };
+		BF2E540524E2FD5E0033F943 /* AccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF2E540324E2FD5E0033F943 /* AccountsViewController.xib */; };
+		BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E540624E300A00033F943 /* LoginViewPresenter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BF2E53E224E2F59F0033F943 /* MoneyboxTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyboxTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2E53E524E2F59F0033F943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF2E53EE24E2F5A00033F943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF2E53F124E2F5A00033F943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF2E53F324E2F5A00033F943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2E53F924E2F9FE0033F943 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF2E53FA24E2F9FE0033F943 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		BF2E540224E2FD5E0033F943 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		BF2E540324E2FD5E0033F943 /* AccountsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsViewController.xib; sourceTree = "<group>"; };
+		BF2E540624E300A00033F943 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF2E53DF24E2F59F0033F943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF2E53D924E2F59F0033F943 = {
+			isa = PBXGroup;
+			children = (
+				BF2E53E424E2F59F0033F943 /* MoneyboxTest */,
+				BF2E53E324E2F59F0033F943 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF2E53E324E2F59F0033F943 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E53E224E2F59F0033F943 /* MoneyboxTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF2E53E424E2F59F0033F943 /* MoneyboxTest */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E53E524E2F59F0033F943 /* AppDelegate.swift */,
+				BF2E53FD24E2FAA90033F943 /* UI */,
+				BF2E540124E2FD150033F943 /* Miscellaneous */,
+			);
+			path = MoneyboxTest;
+			sourceTree = "<group>";
+		};
+		BF2E53FD24E2FAA90033F943 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E53FF24E2FABA0033F943 /* Login */,
+				BF2E540024E2FAC30033F943 /* Accounts */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BF2E53FF24E2FABA0033F943 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E53F924E2F9FE0033F943 /* LoginViewController.swift */,
+				BF2E53FA24E2F9FE0033F943 /* LoginViewController.xib */,
+				BF2E540624E300A00033F943 /* LoginViewPresenter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BF2E540024E2FAC30033F943 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E540224E2FD5E0033F943 /* AccountsViewController.swift */,
+				BF2E540324E2FD5E0033F943 /* AccountsViewController.xib */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		BF2E540124E2FD150033F943 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E53EE24E2F5A00033F943 /* Assets.xcassets */,
+				BF2E53F024E2F5A00033F943 /* LaunchScreen.storyboard */,
+				BF2E53F324E2F5A00033F943 /* Info.plist */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF2E53E124E2F59F0033F943 /* MoneyboxTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF2E53F624E2F5A00033F943 /* Build configuration list for PBXNativeTarget "MoneyboxTest" */;
+			buildPhases = (
+				BF2E53DE24E2F59F0033F943 /* Sources */,
+				BF2E53DF24E2F59F0033F943 /* Frameworks */,
+				BF2E53E024E2F59F0033F943 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoneyboxTest;
+			productName = MoneyboxTest;
+			productReference = BF2E53E224E2F59F0033F943 /* MoneyboxTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF2E53DA24E2F59F0033F943 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					BF2E53E124E2F59F0033F943 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = BF2E53DD24E2F59F0033F943 /* Build configuration list for PBXProject "MoneyboxTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF2E53D924E2F59F0033F943;
+			productRefGroup = BF2E53E324E2F59F0033F943 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF2E53E124E2F59F0033F943 /* MoneyboxTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF2E53E024E2F59F0033F943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2E53F224E2F5A00033F943 /* LaunchScreen.storyboard in Resources */,
+				BF2E53EF24E2F5A00033F943 /* Assets.xcassets in Resources */,
+				BF2E540524E2FD5E0033F943 /* AccountsViewController.xib in Resources */,
+				BF2E53FC24E2F9FE0033F943 /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF2E53DE24E2F59F0033F943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2E53FB24E2F9FE0033F943 /* LoginViewController.swift in Sources */,
+				BF2E540424E2FD5E0033F943 /* AccountsViewController.swift in Sources */,
+				BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */,
+				BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BF2E53F024E2F5A00033F943 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF2E53F124E2F5A00033F943 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF2E53F424E2F5A00033F943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF2E53F524E2F5A00033F943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF2E53F724E2F5A00033F943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJ9777UUFQ;
+				INFOPLIST_FILE = MoneyboxTest/Miscellaneous/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.gilhakemi.MoneyboxTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF2E53F824E2F5A00033F943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJ9777UUFQ;
+				INFOPLIST_FILE = MoneyboxTest/Miscellaneous/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.gilhakemi.MoneyboxTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF2E53DD24E2F59F0033F943 /* Build configuration list for PBXProject "MoneyboxTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2E53F424E2F5A00033F943 /* Debug */,
+				BF2E53F524E2F5A00033F943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF2E53F624E2F5A00033F943 /* Build configuration list for PBXNativeTarget "MoneyboxTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2E53F724E2F5A00033F943 /* Debug */,
+				BF2E53F824E2F5A00033F943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF2E53DA24E2F59F0033F943 /* Project object */;
+}
