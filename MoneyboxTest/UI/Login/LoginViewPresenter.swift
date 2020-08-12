@@ -11,8 +11,8 @@ protocol LoginPresenter {
     func loginButtonPressed(with email: String?, and password: String?)
 }
 
-//set up network client to make a request to the authentication endpoint
-//simply retrieve the result and print it in the presenter to start off
+//  "Email": "test+ios@moneyboxapp.com"
+//  "Password": "P455word12"
 
 //parse the bearer token and store it in a 'usermanager' object
 
@@ -21,9 +21,9 @@ protocol LoginPresenter {
 class LoginViewPresenter: LoginPresenter {
     
     weak var loginView: LoginView?
-    var networkClient: NetworkClient
+    var networkClient: AuthNetworkClient
     
-    init (networkClient: NetworkClient) {
+    init (networkClient: AuthNetworkClient) {
         self.networkClient = networkClient
     }
     
@@ -39,12 +39,14 @@ class LoginViewPresenter: LoginPresenter {
             return
         }
         
-        guard let data = networkClient.performSignIn(with: email, and: password) else {
+        guard
+            let data = networkClient.performSignIn(with: email, and: password),
+            let json = try? JSONDecoder().decode(AuthenticationJSONResponse.self, from: data)
+        else {
             print("Something has gone wrong, please try again later")
             return
         }
-        
-        print(String(data: data, encoding: .utf8)!)
+    
     }
     
     

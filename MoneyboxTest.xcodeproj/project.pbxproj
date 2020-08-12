@@ -15,8 +15,10 @@
 		BF2E540424E2FD5E0033F943 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E540224E2FD5E0033F943 /* AccountsViewController.swift */; };
 		BF2E540524E2FD5E0033F943 /* AccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF2E540324E2FD5E0033F943 /* AccountsViewController.xib */; };
 		BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E540624E300A00033F943 /* LoginViewPresenter.swift */; };
-		BF3EB5FB24E30B2900493CC7 /* AuthNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EB5FA24E30B2900493CC7 /* AuthNetworkClient.swift */; };
+		BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EB5FA24E30B2900493CC7 /* NetworkClient.swift */; };
 		BF3EB5FD24E30B8700493CC7 /* MoneyboxURLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EB5FC24E30B8700493CC7 /* MoneyboxURLStore.swift */; };
+		BF482A5224E4525A00CADD3D /* NetworkDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF482A5124E4525A00CADD3D /* NetworkDataParser.swift */; };
+		BF482A5424E4528900CADD3D /* AuthenticationJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +32,10 @@
 		BF2E540224E2FD5E0033F943 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		BF2E540324E2FD5E0033F943 /* AccountsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsViewController.xib; sourceTree = "<group>"; };
 		BF2E540624E300A00033F943 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
-		BF3EB5FA24E30B2900493CC7 /* AuthNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkClient.swift; sourceTree = "<group>"; };
+		BF3EB5FA24E30B2900493CC7 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		BF3EB5FC24E30B8700493CC7 /* MoneyboxURLStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyboxURLStore.swift; sourceTree = "<group>"; };
+		BF482A5124E4525A00CADD3D /* NetworkDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataParser.swift; sourceTree = "<group>"; };
+		BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationJSONResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			children = (
 				BF2E53E524E2F59F0033F943 /* AppDelegate.swift */,
 				BF3EB5FC24E30B8700493CC7 /* MoneyboxURLStore.swift */,
+				BF3EB5FA24E30B2900493CC7 /* NetworkClient.swift */,
 				BF2E53FD24E2FAA90033F943 /* UI */,
 				BF2E540124E2FD150033F943 /* Miscellaneous */,
 			);
@@ -87,7 +92,8 @@
 				BF2E53F924E2F9FE0033F943 /* LoginViewController.swift */,
 				BF2E53FA24E2F9FE0033F943 /* LoginViewController.xib */,
 				BF2E540624E300A00033F943 /* LoginViewPresenter.swift */,
-				BF3EB5FA24E30B2900493CC7 /* AuthNetworkClient.swift */,
+				BF482A5124E4525A00CADD3D /* NetworkDataParser.swift */,
+				BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -182,12 +188,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF482A5424E4528900CADD3D /* AuthenticationJSONResponse.swift in Sources */,
 				BF2E53FB24E2F9FE0033F943 /* LoginViewController.swift in Sources */,
-				BF3EB5FB24E30B2900493CC7 /* AuthNetworkClient.swift in Sources */,
+				BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */,
 				BF3EB5FD24E30B8700493CC7 /* MoneyboxURLStore.swift in Sources */,
 				BF2E540424E2FD5E0033F943 /* AccountsViewController.swift in Sources */,
 				BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */,
 				BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */,
+				BF482A5224E4525A00CADD3D /* NetworkDataParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
