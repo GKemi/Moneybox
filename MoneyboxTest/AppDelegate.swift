@@ -11,22 +11,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var masterRouter: MainRouter?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
-    
-        let authNetworkClient = NetworkClient()
-        let loginPresenter = LoginViewPresenter(networkClient: authNetworkClient)
         
-        loginVC.loginPresenter = loginPresenter
-        loginPresenter.loginView = loginVC
-        
-        window?.rootViewController = loginVC
-        window?.makeKeyAndVisible()
-        
+        if let window = window {
+            masterRouter = MainRouter(window: window)            
+        }
         
         return true
     }

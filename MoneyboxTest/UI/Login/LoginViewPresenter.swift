@@ -22,11 +22,12 @@ class LoginViewPresenter: LoginPresenter {
     
     weak var loginView: LoginView?
     var networkClient: AuthNetworkClient
+    var router: MainRouter
     
-    init (networkClient: AuthNetworkClient) {
+    init (router: MainRouter, networkClient: AuthNetworkClient) {
+        self.router = router
         self.networkClient = networkClient
     }
-    
     
     func loginButtonPressed(with email: String?, and password: String?) {
         guard
@@ -47,6 +48,7 @@ class LoginViewPresenter: LoginPresenter {
             return
         }
     
+        router.route(to: .products)
     }
     
     
