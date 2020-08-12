@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        let loginPresenter = LoginViewPresenter()
+    
+        let authNetworkClient = AuthNetworkClient()
+        let loginPresenter = LoginViewPresenter(networkClient: authNetworkClient)
         
         loginVC.loginPresenter = loginPresenter
         loginPresenter.loginView = loginVC

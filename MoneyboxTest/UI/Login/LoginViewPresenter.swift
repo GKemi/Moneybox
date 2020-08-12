@@ -21,19 +21,30 @@ protocol LoginPresenter {
 class LoginViewPresenter: LoginPresenter {
     
     weak var loginView: LoginView?
+    var networkClient: NetworkClient
+    
+    init (networkClient: NetworkClient) {
+        self.networkClient = networkClient
+    }
     
     
     func loginButtonPressed(with email: String?, and password: String?) {
-        guard let email = email,
-              !email.isEmpty,
-              let password = password,
-              !password.isEmpty
+        guard
+            let email = email,
+            let password = password,
+            !email.isEmpty,
+            !password.isEmpty
         else {
             print("Please fill in some sign in details")
             return
         }
         
-        print("email: \(email) & pass: \(password)")
+        guard let data = networkClient.performSignIn(with: email, and: password) else {
+            print("Something has gone wrong, please try again later")
+            return
+        }
+        
+        print(String(data: data, encoding: .utf8)!)
     }
     
     
