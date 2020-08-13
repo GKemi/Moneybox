@@ -11,11 +11,15 @@ protocol AuthNetworkClient {
     func performSignIn(with email: String, and password: String) -> Data?
 }
 
-protocol ProductsNetworkClient {
-    func getInvestorProducts(with token: String) -> Data?
+protocol AccountsNetworkClient {
+    func getAccounts(with token: String) -> Data?
 }
 
-class NetworkClient: AuthNetworkClient {
+class NetworkClient {
+    static var bearerToken: String = ""
+}
+
+extension NetworkClient: AuthNetworkClient {
     
     func performSignIn(with email: String, and password: String) -> Data? {
         guard let loginURL = loginURL else { return nil }
@@ -34,8 +38,8 @@ class NetworkClient: AuthNetworkClient {
     
 }
 
-extension NetworkClient: ProductsNetworkClient {
-    func getInvestorProducts(with token: String) -> Data? {
+extension NetworkClient: AccountsNetworkClient {
+    func getAccounts(with token: String) -> Data? {
         guard let investorURL = investorURL else { return nil }
         var investorRequest = generateDefaultRequest(with: investorURL)
         

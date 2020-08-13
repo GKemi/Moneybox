@@ -31,8 +31,16 @@ class MainRouter {
             loginPresenter.loginView = loginVC
             
             destinationViewController = loginVC
-        case .products:
-            destinationViewController = ProductsViewController(nibName: "ProductsViewController", bundle: nil)
+        case .accounts:
+            let accountsVC = AccountsViewController(nibName: "AccountsViewController", bundle: nil)
+            
+            let accountsNetworkClient = NetworkClient()
+            let accountsPresenter = AccountsViewPresenter(networkClient: accountsNetworkClient)
+            
+            accountsVC.presenter = accountsPresenter
+            accountsPresenter.accountsView = accountsVC
+            
+            destinationViewController = accountsVC
         }
         
         window.rootViewController = destinationViewController
@@ -49,5 +57,5 @@ class MainRouter {
 
 enum MainRouterDestination {
     case login
-    case products
+    case accounts
 }

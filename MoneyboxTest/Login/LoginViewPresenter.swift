@@ -14,10 +14,6 @@ protocol LoginPresenter {
 //  "Email": "test+ios@moneyboxapp.com"
 //  "Password": "P455word12"
 
-//parse the bearer token and store it in a 'usermanager' object
-
-//when the parsing completes, tell the 'router' object to launch the second screen
-
 class LoginViewPresenter: LoginPresenter {
     
     weak var loginView: LoginView?
@@ -47,8 +43,10 @@ class LoginViewPresenter: LoginPresenter {
             print("Something has gone wrong, please try again later")
             return
         }
-    
-        router.route(to: .products)
+        
+        NetworkClient.bearerToken = json.session.bearer
+        
+        router.route(to: .accounts)
     }
     
     

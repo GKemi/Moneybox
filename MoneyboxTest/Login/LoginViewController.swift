@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    
     @IBAction func loginButtonPressed(_ sender: Any) {
         loginPresenter?.loginButtonPressed(with: emailField.text, and: passwordField.text)
     }
