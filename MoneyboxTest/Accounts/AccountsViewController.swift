@@ -7,8 +7,22 @@
 
 import UIKit
 
-protocol AccountsView: class {
+struct AccountViewModel {
+    let name: String
+    let planValue: String
+    let moneybox: String
     
+    public init(name: String, planValue: String, moneybox: String) {
+        self.name = name
+        self.planValue = planValue
+        self.moneybox = moneybox
+    }
+}
+
+protocol AccountsView: class {
+    func setTitle(to title: String)
+    func setTotalPlanValue(to: String)
+    func displayAccounts(with viewModels: [AccountViewModel])
 }
 
 class AccountsViewController: UIViewController {
@@ -17,15 +31,45 @@ class AccountsViewController: UIViewController {
     @IBOutlet weak var accountsTableView: UITableView!
     
     var presenter: AccountsPresenter?
+    var accountViewModels = [AccountViewModel]() { didSet { accountsTableView.reloadData() }}
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter?.viewWillLoad()
+        
+        accountsTableView.dataSource = self
+        accountsTableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil),
+                                   forCellReuseIdentifier: "AccountsTableViewCell")
+        
     }
 
 }
 
-extension AccountsViewController: AccountsView {
+extension AccountsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return accountViewModels.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AccountsTableViewCell") as! AccountsTableViewCell
+        
+        cell.setCellContent(with: accountViewModels[indexPath.row])
+        
+        return cell
+    }
+}
+
+extension AccountsViewController: AccountsView {
+    func setTitle(to title: String) {
+        helloLabel.text = title
+    }
+    
+    func setTotalPlanValue(to value: String) {
+        totalPlanLabel.text = value
+    }
+    
+    func displayAccounts(with viewModels: [AccountViewModel]) {
+        accountViewModels = viewModels
+    }
 }

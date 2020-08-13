@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */; };
 		BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */; };
+		BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */; };
+		BF164C8F24E5A7EC0023AA49 /* AccountsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF164C8D24E5A7EC0023AA49 /* AccountsTableViewCell.xib */; };
 		BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E53E524E2F59F0033F943 /* AppDelegate.swift */; };
 		BF2E53EF24E2F5A00033F943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2E53EE24E2F5A00033F943 /* Assets.xcassets */; };
 		BF2E53F224E2F5A00033F943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2E53F024E2F5A00033F943 /* LaunchScreen.storyboard */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewPresenter.swift; sourceTree = "<group>"; };
 		BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsJSONResponse.swift; sourceTree = "<group>"; };
+		BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
+		BF164C8D24E5A7EC0023AA49 /* AccountsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsTableViewCell.xib; sourceTree = "<group>"; };
 		BF2E53E224E2F59F0033F943 /* MoneyboxTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyboxTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2E53E524E2F59F0033F943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2E53EE24E2F5A00033F943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				BFC4FE8924E45FBA00349E03 /* AccountsViewController.swift */,
 				BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */,
 				BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */,
+				BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */,
+				BF164C8D24E5A7EC0023AA49 /* AccountsTableViewCell.xib */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 			files = (
 				BF2E53F224E2F5A00033F943 /* LaunchScreen.storyboard in Resources */,
 				BF2E53EF24E2F5A00033F943 /* Assets.xcassets in Resources */,
+				BF164C8F24E5A7EC0023AA49 /* AccountsTableViewCell.xib in Resources */,
 				BFC4FE8C24E45FBA00349E03 /* AccountsViewController.xib in Resources */,
 				BF2E53FC24E2F9FE0033F943 /* LoginViewController.xib in Resources */,
 			);
@@ -200,6 +207,7 @@
 				BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */,
 				BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */,
 				BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */,
+				BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
