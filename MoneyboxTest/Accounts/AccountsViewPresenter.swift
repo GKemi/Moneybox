@@ -36,8 +36,8 @@ extension AccountsViewPresenter: AccountsPresenter {
         var viewModels: [AccountViewModel] = []
         for productResponse in json.products {
             let name = productResponse.product.name
-            let planValue = String(productResponse.planValue)
-            let moneybox = String(productResponse.moneybox)
+            let planValue = "£\(productResponse.planValue)"
+            let moneybox = "£\(productResponse.moneybox)"
             
             let accountColour = UIColor(hexString: productResponse.product.hexColour, alpha: 0.2)
             

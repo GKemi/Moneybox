@@ -17,8 +17,8 @@ class AccountsTableViewCell: UITableViewCell {
     func setCellContent(with viewModel: AccountViewModel) {
         self.selectionStyle = .none
         accountNameLabel.text = viewModel.name
-        planValueLabel.text = "Plan value: £\(viewModel.planValue)"
-        moneyboxLabel.text = "Moneybox: £\(viewModel.moneybox)"
+        planValueLabel.text = "Plan value: \(viewModel.planValue)"
+        moneyboxLabel.text = "Moneybox: \(viewModel.moneybox)"
         
         cardView.layer.cornerRadius = 15
         cardView.layer.masksToBounds = true
