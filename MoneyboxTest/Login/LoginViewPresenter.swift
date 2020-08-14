@@ -17,10 +17,10 @@ protocol LoginPresenter {
 class LoginViewPresenter: LoginPresenter {
     
     weak var loginView: LoginView?
-    var networkClient: AuthNetworkClient
+    var networkClient: LoginNetworkClient
     var router: MainRouter
     
-    init (router: MainRouter, networkClient: AuthNetworkClient) {
+    init (router: MainRouter, networkClient: LoginNetworkClient) {
         self.router = router
         self.networkClient = networkClient
     }
@@ -45,7 +45,7 @@ class LoginViewPresenter: LoginPresenter {
         }
         
         NetworkClient.bearerToken = json.session.bearer
-        
+
         router.route(to: .accounts)
     }
     

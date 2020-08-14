@@ -11,6 +11,7 @@ struct AccountViewModel {
     let name: String
     let planValue: String
     let moneybox: String
+    let colour: UIColor
 }
 
 protocol AccountsView: class {
@@ -32,10 +33,12 @@ class AccountsViewController: UIViewController {
 
         presenter?.viewWillLoad()
         
+        navigationItem.title = "User Accounts"
+        
         accountsTableView.dataSource = self
         accountsTableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil),
                                    forCellReuseIdentifier: "AccountsTableViewCell")
-        
+        accountsTableView.separatorStyle = .none
     }
 
 }
@@ -60,7 +63,7 @@ extension AccountsViewController: AccountsView {
     }
     
     func setTotalPlanValue(to value: String) {
-        totalPlanLabel.text = value
+        totalPlanLabel.text = "Total Plan Value: \(value)"
     }
     
     func displayAccounts(with viewModels: [AccountViewModel]) {

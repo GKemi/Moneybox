@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AccountsPresenter {
     func viewWillLoad()
@@ -21,6 +22,7 @@ class AccountsViewPresenter {
 }
 
 extension AccountsViewPresenter: AccountsPresenter {
+    
     func viewWillLoad() {
         
         guard
@@ -29,7 +31,7 @@ extension AccountsViewPresenter: AccountsPresenter {
         else { return }
         
         accountsView?.setTitle(to: "Hello friend!")
-        accountsView?.setTotalPlanValue(to: "Total Plan Value: £\(json.totalValue)")
+        accountsView?.setTotalPlanValue(to: "£\(json.totalValue)")
         
         var viewModels: [AccountViewModel] = []
         for productResponse in json.products {
@@ -37,9 +39,12 @@ extension AccountsViewPresenter: AccountsPresenter {
             let planValue = String(productResponse.planValue)
             let moneybox = String(productResponse.moneybox)
             
+            let accountColour = UIColor(hexString: productResponse.product.hexColour, alpha: 0.2)
+            
             let viewModel = AccountViewModel(name: name,
                              planValue: planValue,
-                             moneybox: moneybox)
+                             moneybox: moneybox,
+                             colour: accountColour)
             
             viewModels.append(viewModel)
         }

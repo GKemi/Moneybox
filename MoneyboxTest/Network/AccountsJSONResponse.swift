@@ -31,8 +31,10 @@ struct ProductResponse: Decodable {
 
 struct Product: Decodable {
     let name: String
+    let hexColour: String
     
     enum CodingKeys: String, CodingKey {
         case name = "FriendlyName"
+        case hexColour = "ProductHexCode"
     }
 }

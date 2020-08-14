@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AuthNetworkClient {
+protocol LoginNetworkClient {
     func performSignIn(with email: String, and password: String) -> Data?
 }
 
@@ -19,7 +19,7 @@ class NetworkClient {
     static var bearerToken: String = ""
 }
 
-extension NetworkClient: AuthNetworkClient {
+extension NetworkClient: LoginNetworkClient {
     
     func performSignIn(with email: String, and password: String) -> Data? {
         guard let loginURL = loginURL else { return nil }

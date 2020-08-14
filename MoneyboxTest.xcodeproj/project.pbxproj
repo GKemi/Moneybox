@@ -19,6 +19,8 @@
 		BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2E540624E300A00033F943 /* LoginViewPresenter.swift */; };
 		BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EB5FA24E30B2900493CC7 /* NetworkClient.swift */; };
 		BF482A5424E4528900CADD3D /* AuthenticationJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */; };
+		BFB6359724E6F4D7006FDAD8 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6359624E6F4D7006FDAD8 /* LoginBuilder.swift */; };
+		BFB6359924E6F5A5006FDAD8 /* AccountsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */; };
 		BFC4FE8724E45B2100349E03 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC4FE8624E45B2100349E03 /* MainRouter.swift */; };
 		BFC4FE8B24E45FBA00349E03 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC4FE8924E45FBA00349E03 /* AccountsViewController.swift */; };
 		BFC4FE8C24E45FBA00349E03 /* AccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */; };
@@ -39,6 +41,8 @@
 		BF2E540624E300A00033F943 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		BF3EB5FA24E30B2900493CC7 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationJSONResponse.swift; sourceTree = "<group>"; };
+		BFB6359624E6F4D7006FDAD8 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsBuilder.swift; sourceTree = "<group>"; };
 		BFC4FE8624E45B2100349E03 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		BFC4FE8924E45FBA00349E03 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsViewController.xib; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				BF2E53F924E2F9FE0033F943 /* LoginViewController.swift */,
 				BF2E53FA24E2F9FE0033F943 /* LoginViewController.xib */,
 				BF2E540624E300A00033F943 /* LoginViewPresenter.swift */,
+				BFB6359624E6F4D7006FDAD8 /* LoginBuilder.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 				BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */,
 				BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */,
 				BF164C8D24E5A7EC0023AA49 /* AccountsTableViewCell.xib */,
+				BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -203,10 +209,12 @@
 				BF2E53FB24E2F9FE0033F943 /* LoginViewController.swift in Sources */,
 				BFC4FE8B24E45FBA00349E03 /* AccountsViewController.swift in Sources */,
 				BFC4FE8724E45B2100349E03 /* MainRouter.swift in Sources */,
+				BFB6359924E6F5A5006FDAD8 /* AccountsBuilder.swift in Sources */,
 				BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */,
 				BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */,
 				BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */,
 				BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */,
+				BFB6359724E6F4D7006FDAD8 /* LoginBuilder.swift in Sources */,
 				BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

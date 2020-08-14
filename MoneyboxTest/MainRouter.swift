@@ -22,28 +22,9 @@ class MainRouter {
         
         switch destination {
         case .login:
-            let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        
-            let authNetworkClient = NetworkClient()
-            let loginPresenter = LoginViewPresenter(router: self, networkClient: authNetworkClient)
-            
-            loginVC.loginPresenter = loginPresenter
-            loginPresenter.loginView = loginVC
-            
-            destinationViewController = loginVC
+            destinationViewController = LoginBuilder.build(with: self)
         case .accounts:
-            let accountsVC = AccountsViewController(nibName: "AccountsViewController", bundle: nil)
-            
-            let accountsNetworkClient = NetworkClient()
-            let accountsPresenter = AccountsViewPresenter(networkClient: accountsNetworkClient)
-            
-            accountsVC.presenter = accountsPresenter
-            accountsPresenter.accountsView = accountsVC
-            
-            let navController = UINavigationController()
-            navController.pushViewController(accountsVC, animated: false)
-            
-            destinationViewController = navController
+            destinationViewController = AccountsBuilder.build(with: self)
         }
         
         window.rootViewController = destinationViewController
