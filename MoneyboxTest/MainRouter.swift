@@ -40,7 +40,10 @@ class MainRouter {
             accountsVC.presenter = accountsPresenter
             accountsPresenter.accountsView = accountsVC
             
-            destinationViewController = accountsVC
+            let navController = UINavigationController()
+            navController.pushViewController(accountsVC, animated: false)
+            
+            destinationViewController = navController
         }
         
         window.rootViewController = destinationViewController

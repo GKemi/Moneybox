@@ -31,17 +31,19 @@ extension AccountsViewPresenter: AccountsPresenter {
         accountsView?.setTitle(to: "Hello friend!")
         accountsView?.setTotalPlanValue(to: "Total Plan Value: £\(json.totalValue)")
         
-//        var viewModels: [AccountViewModel] = []
-//        for productResponse in json.products {
-//            let name = productResponse.product.name
-//            let planValue = productResponse.planValue
-//            let moneybox = productResponse.moneybox
-//            
-//            AccountViewModel(name: name,
-//                             planValue: planValue,
-//                             moneybox: moneybox)
-////            viewModels.append(viewModel)
-//        }
-//        accountsView?.displayAccounts(with: viewModels)
-//    }
+        var viewModels: [AccountViewModel] = []
+        for productResponse in json.products {
+            let name = productResponse.product.name
+            let planValue = String(productResponse.planValue)
+            let moneybox = String(productResponse.moneybox)
+            
+            let viewModel = AccountViewModel(name: name,
+                             planValue: planValue,
+                             moneybox: moneybox)
+            
+            viewModels.append(viewModel)
+        }
+        
+        accountsView?.displayAccounts(with: viewModels)
+    }
 }

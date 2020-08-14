@@ -11,12 +11,6 @@ struct AccountViewModel {
     let name: String
     let planValue: String
     let moneybox: String
-    
-    public init(name: String, planValue: String, moneybox: String) {
-        self.name = name
-        self.planValue = planValue
-        self.moneybox = moneybox
-    }
 }
 
 protocol AccountsView: class {
