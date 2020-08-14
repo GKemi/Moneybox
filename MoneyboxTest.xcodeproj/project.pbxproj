@@ -21,6 +21,8 @@
 		BF482A5424E4528900CADD3D /* AuthenticationJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */; };
 		BFB6359724E6F4D7006FDAD8 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6359624E6F4D7006FDAD8 /* LoginBuilder.swift */; };
 		BFB6359924E6F5A5006FDAD8 /* AccountsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */; };
+		BFB635A124E703A2006FDAD8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB635A024E703A2006FDAD8 /* User.swift */; };
+		BFB635A324E703CC006FDAD8 /* LoginViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB635A224E703CC006FDAD8 /* LoginViewInteractor.swift */; };
 		BFC4FE8724E45B2100349E03 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC4FE8624E45B2100349E03 /* MainRouter.swift */; };
 		BFC4FE8B24E45FBA00349E03 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC4FE8924E45FBA00349E03 /* AccountsViewController.swift */; };
 		BFC4FE8C24E45FBA00349E03 /* AccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */; };
@@ -43,6 +45,8 @@
 		BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationJSONResponse.swift; sourceTree = "<group>"; };
 		BFB6359624E6F4D7006FDAD8 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsBuilder.swift; sourceTree = "<group>"; };
+		BFB635A024E703A2006FDAD8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BFB635A224E703CC006FDAD8 /* LoginViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewInteractor.swift; sourceTree = "<group>"; };
 		BFC4FE8624E45B2100349E03 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		BFC4FE8924E45FBA00349E03 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsViewController.xib; sourceTree = "<group>"; };
@@ -80,8 +84,8 @@
 			children = (
 				BF2E53E524E2F59F0033F943 /* AppDelegate.swift */,
 				BFC4FE8624E45B2100349E03 /* MainRouter.swift */,
-				BF2E53FF24E2FABA0033F943 /* Login */,
-				BF2E540024E2FAC30033F943 /* Accounts */,
+				BFB6359F24E70359006FDAD8 /* UI */,
+				BFB6359E24E7034F006FDAD8 /* Core */,
 				BFC4FE8824E45D6600349E03 /* Network */,
 				BF2E540124E2FD150033F943 /* Miscellaneous */,
 			);
@@ -95,6 +99,7 @@
 				BF2E53FA24E2F9FE0033F943 /* LoginViewController.xib */,
 				BF2E540624E300A00033F943 /* LoginViewPresenter.swift */,
 				BFB6359624E6F4D7006FDAD8 /* LoginBuilder.swift */,
+				BFB635A224E703CC006FDAD8 /* LoginViewInteractor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -120,6 +125,23 @@
 				BF2E53F324E2F5A00033F943 /* Info.plist */,
 			);
 			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		BFB6359E24E7034F006FDAD8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BFB635A024E703A2006FDAD8 /* User.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BFB6359F24E70359006FDAD8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BF2E53FF24E2FABA0033F943 /* Login */,
+				BF2E540024E2FAC30033F943 /* Accounts */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		BFC4FE8824E45D6600349E03 /* Network */ = {
@@ -209,6 +231,8 @@
 				BF2E53FB24E2F9FE0033F943 /* LoginViewController.swift in Sources */,
 				BFC4FE8B24E45FBA00349E03 /* AccountsViewController.swift in Sources */,
 				BFC4FE8724E45B2100349E03 /* MainRouter.swift in Sources */,
+				BFB635A324E703CC006FDAD8 /* LoginViewInteractor.swift in Sources */,
+				BFB635A124E703A2006FDAD8 /* User.swift in Sources */,
 				BFB6359924E6F5A5006FDAD8 /* AccountsBuilder.swift in Sources */,
 				BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */,
 				BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */,

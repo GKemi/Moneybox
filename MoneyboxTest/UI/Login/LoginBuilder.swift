@@ -12,8 +12,9 @@ class LoginBuilder {
     static func build(with router: MainRouter) -> UIViewController {
         let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
     
-        let authNetworkClient = NetworkClient()
-        let loginPresenter = LoginViewPresenter(router: router, networkClient: authNetworkClient)
+        let loginNetworkClient = NetworkClient()
+        let loginInteractor = LoginViewInteractor(networkClient: loginNetworkClient)
+        let loginPresenter = LoginViewPresenter(router: router, networkClient: loginNetworkClient, loginInteractor: loginInteractor)
         
         loginVC.loginPresenter = loginPresenter
         loginPresenter.loginView = loginVC
