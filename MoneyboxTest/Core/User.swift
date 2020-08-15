@@ -8,6 +8,6 @@
 import Foundation
 
 struct User {
-    let email: String
-    let bearer: String
+    var email: String?
+    var bearer: String
 }

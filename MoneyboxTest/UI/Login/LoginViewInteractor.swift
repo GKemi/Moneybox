@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginInteractor {
-    func performSignIn(with email: String, and password: String, completion: @escaping (User?) -> Void)
+    func performSignIn(with email: String, and password: String, success: @escaping () -> Void, failure: @escaping () -> Void)
 }
 
 class LoginViewInteractor {
@@ -20,21 +20,21 @@ class LoginViewInteractor {
 }
 
 extension LoginViewInteractor: LoginInteractor {
-    func performSignIn(with email: String, and password: String, completion: @escaping (User?) -> Void) {
+    func performSignIn(with email: String, and password: String, success: @escaping () -> Void, failure: @escaping () -> Void) {
         guard
             let data = networkClient.performSignIn(with: email, and: password),
             let json = try? JSONDecoder().decode(AuthenticationJSONResponse.self, from: data)
         else {
             DispatchQueue.main.async {
-                completion(nil)
+               failure()
             }
             return
         }
         
-        let user = User(email: email, bearer: json.session.bearer)
+        UserStore.user = User(email: email, bearer: json.session.bearer)
         
         DispatchQueue.main.async {
-            completion(user)            
+            success()
         }
     }
 }

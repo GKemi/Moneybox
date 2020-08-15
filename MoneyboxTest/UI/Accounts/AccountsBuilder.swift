@@ -14,7 +14,8 @@ class AccountsBuilder {
         let navController = UINavigationController()
         
         let accountsNetworkClient = NetworkClient()
-        let accountsPresenter = AccountsViewPresenter(networkClient: accountsNetworkClient)
+        let accountsInteractor = AccountsViewInteractor(networkClient: accountsNetworkClient)
+        let accountsPresenter = AccountsViewPresenter(accountsInteractor: accountsInteractor)
         
         accountsVC.presenter = accountsPresenter
         accountsPresenter.accountsView = accountsVC

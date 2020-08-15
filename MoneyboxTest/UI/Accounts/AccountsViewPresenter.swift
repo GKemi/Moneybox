@@ -14,10 +14,11 @@ protocol AccountsPresenter {
 
 class AccountsViewPresenter {
     weak var accountsView: AccountsView?
-    var networkClient: AccountsNetworkClient
+    var accountsInteractor: AccountsViewInteractor
+    var accounts = [Account]()
     
-    init(networkClient: AccountsNetworkClient) {
-        self.networkClient = networkClient
+    init(accountsInteractor: AccountsViewInteractor) {
+        self.accountsInteractor = accountsInteractor
     }
 }
 
@@ -25,21 +26,31 @@ extension AccountsViewPresenter: AccountsPresenter {
     
     func viewWillLoad() {
         
-        guard
-            let data = networkClient.getAccounts(with: NetworkClient.bearerToken),
-            let json = try? JSONDecoder().decode(AccountsJSONResponse.self, from: data)
-        else { return }
+        DispatchQueue.global(qos: .background).async {
+            self.accountsInteractor.fetchAccountsForUser(success: { accounts in
+                self.accountsView?.setTitle(to: "Hello \(UserStore.user!.email!)!")
+                self.accounts = accounts
+                
+                let viewModels = self.generateAccountViewModels()
+                let totalPlanValue = self.calculateTotalPlanValue()
+                 
+                self.accountsView?.setTotalPlanValue(to: "£\(totalPlanValue)")
+                self.accountsView?.displayAccounts(with: viewModels)
+            }, failure: {
+                print("Unable to fetch accounts.")
+            })
+        }
         
-        accountsView?.setTitle(to: "Hello friend!")
-        accountsView?.setTotalPlanValue(to: "£\(json.totalValue)")
+    }
+    
+    private func generateAccountViewModels() -> [AccountViewModel] {
+        var viewModels = [AccountViewModel]()
         
-        var viewModels: [AccountViewModel] = []
-        for productResponse in json.products {
-            let name = productResponse.product.name
-            let planValue = "£\(productResponse.planValue)"
-            let moneybox = "£\(productResponse.moneybox)"
-            
-            let accountColour = UIColor(hexString: productResponse.product.hexColour, alpha: 0.2)
+        for account in self.accounts {
+            let name = account.name
+            let planValue = "£\(account.planValue)"
+            let moneybox = "£\(account.moneybox)"
+            let accountColour = UIColor(hexString: account.colour, alpha: 0.2)
             
             let viewModel = AccountViewModel(name: name,
                              planValue: planValue,
@@ -49,6 +60,16 @@ extension AccountsViewPresenter: AccountsPresenter {
             viewModels.append(viewModel)
         }
         
-        accountsView?.displayAccounts(with: viewModels)
+        return viewModels
+    }
+    
+    private func calculateTotalPlanValue() -> Double {
+        var total: Double = 0
+        
+        for account in self.accounts {
+            total += account.planValue
+        }
+        
+        return total
     }
 }

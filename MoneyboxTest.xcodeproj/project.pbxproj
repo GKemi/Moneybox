@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962EB30F24E73F2F0052BFA2 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EB30E24E73F2F0052BFA2 /* UserStore.swift */; };
+		968908A524E82199006D8236 /* AccountsViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968908A424E82199006D8236 /* AccountsViewInteractor.swift */; };
+		968908A724E82449006D8236 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968908A624E82449006D8236 /* Account.swift */; };
 		BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */; };
 		BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */; };
 		BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		962EB30E24E73F2F0052BFA2 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		968908A424E82199006D8236 /* AccountsViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewInteractor.swift; sourceTree = "<group>"; };
+		968908A624E82449006D8236 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewPresenter.swift; sourceTree = "<group>"; };
 		BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsJSONResponse.swift; sourceTree = "<group>"; };
 		BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */,
 				BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */,
 				BF164C8D24E5A7EC0023AA49 /* AccountsTableViewCell.xib */,
+				968908A424E82199006D8236 /* AccountsViewInteractor.swift */,
 				BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */,
 			);
 			path = Accounts;
@@ -131,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				BFB635A024E703A2006FDAD8 /* User.swift */,
+				962EB30E24E73F2F0052BFA2 /* UserStore.swift */,
+				968908A624E82449006D8236 /* Account.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -236,8 +245,11 @@
 				BFB6359924E6F5A5006FDAD8 /* AccountsBuilder.swift in Sources */,
 				BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */,
 				BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */,
+				962EB30F24E73F2F0052BFA2 /* UserStore.swift in Sources */,
+				968908A724E82449006D8236 /* Account.swift in Sources */,
 				BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */,
 				BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */,
+				968908A524E82199006D8236 /* AccountsViewInteractor.swift in Sources */,
 				BFB6359724E6F4D7006FDAD8 /* LoginBuilder.swift in Sources */,
 				BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */,
 			);

@@ -17,14 +17,12 @@ protocol LoginPresenter {
 class LoginViewPresenter {
     weak var loginView: LoginView?
     
-    let networkClient: LoginNetworkClient
     let loginInteractor: LoginInteractor
     let router: MainRouter
     
-    init (router: MainRouter, networkClient: LoginNetworkClient, loginInteractor: LoginInteractor) {
+    init (router: MainRouter, loginInteractor: LoginInteractor) {
         self.router = router
         self.loginInteractor = loginInteractor
-        self.networkClient = networkClient
     }
     
 }
@@ -42,18 +40,13 @@ extension LoginViewPresenter: LoginPresenter {
         }
         
         DispatchQueue.global(qos: .background).async {
-            self.loginInteractor.performSignIn(with: email, and: password) { user in
-                guard
-                    let user = user
-                else {
-                    print("Something has gone wrong, please try again later")
-                    return
-                }
-                
-                NetworkClient.bearerToken = user.bearer //replace with a call to router to prepare user object
+            self.loginInteractor.performSignIn(with: email, and: password,
+            success: {
                 self.router.route(to: .accounts)
+            }) {
+                print("Sorry, we couldn't sign you in at the moment. Please try again later.")
             }
         }
-
     }
+    
 }
