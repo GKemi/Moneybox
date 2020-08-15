@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountDetailsViewController" customModule="MoneyboxTest" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundOverlayView" destination="9rt-oU-wtp" id="F4E-1m-R38"/>
+                <outlet property="depositButton" destination="6IW-bc-6lR" id="Gf8-AK-2fK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,16 +24,18 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IW-bc-6lR">
-                            <rect key="frame" x="162" y="405" width="90" height="42"/>
+                            <rect key="frame" x="8" y="405" width="398" height="30"/>
                             <state key="normal" title="Add £10 "/>
+                            <connections>
+                                <action selector="depositButtonPressed:" destination="-1" eventType="touchUpInside" id="pot-na-b5a"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="6IW-bc-6lR" secondAttribute="bottom" constant="405" id="Ov5-gg-vtP"/>
-                        <constraint firstItem="6IW-bc-6lR" firstAttribute="top" secondItem="9rt-oU-wtp" secondAttribute="top" constant="405" id="U7a-RQ-YeP"/>
-                        <constraint firstItem="6IW-bc-6lR" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="162" id="dCc-7w-gaQ"/>
-                        <constraint firstAttribute="trailing" secondItem="6IW-bc-6lR" secondAttribute="trailing" constant="162" id="fVM-Eo-dJ0"/>
+                        <constraint firstAttribute="trailing" secondItem="6IW-bc-6lR" secondAttribute="trailing" constant="8" id="HiJ-EG-xet"/>
+                        <constraint firstItem="6IW-bc-6lR" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="8" id="fKr-ax-ztw"/>
+                        <constraint firstItem="6IW-bc-6lR" firstAttribute="top" secondItem="9rt-oU-wtp" secondAttribute="top" constant="405" id="xpu-3p-4I5"/>
                     </constraints>
                 </view>
             </subviews>

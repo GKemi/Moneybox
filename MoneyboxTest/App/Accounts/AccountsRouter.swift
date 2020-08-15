@@ -26,7 +26,9 @@ class AccountsRouter {
         switch destination {
         case .accountDetails:
             let accountDetailsVC = AccountDetailsViewController(nibName: "AccountDetailsViewController", bundle: nil)
-            let accountDetailsPresenter = AccountDetailsViewPresenter(account: self.account!)
+            
+            let accountDetailsNetworkClient = NetworkClient()
+            let accountDetailsPresenter = AccountDetailsViewPresenter(account: self.account!, accountDetailsNetworkClient: accountDetailsNetworkClient)
             
             accountDetailsVC.accountDetailsPresenter = accountDetailsPresenter
             accountDetailsPresenter.accountDetailsView = accountDetailsVC

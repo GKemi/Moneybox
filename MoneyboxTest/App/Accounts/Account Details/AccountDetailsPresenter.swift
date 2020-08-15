@@ -33,8 +33,6 @@ extension AccountDetailsViewPresenter: AccountDetailsPresenter {
     }
     
     func depositButtonPressed() {
-        
-        
-        
+        accountDetailsNetworkClient.deposit(amount: 10.0, for: account.accountID, with: UserStore.user!.bearer)
     }
 }

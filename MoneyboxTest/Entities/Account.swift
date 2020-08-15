@@ -8,6 +8,7 @@
 import Foundation
 
 struct Account {
+    let accountID: Int
     let name: String
     let planValue: Double
     let moneybox: Double

@@ -16,11 +16,13 @@ struct AccountsJSONResponse: Decodable {
 }
 
 struct ProductResponse: Decodable {
+    let id: Int
     let planValue: Double
     let moneybox: Double
     let product: Product
     
     enum CodingKeys: String, CodingKey {
+        case id = "Id"
         case planValue = "PlanValue"
         case moneybox = "Moneybox"
         case product = "Product"

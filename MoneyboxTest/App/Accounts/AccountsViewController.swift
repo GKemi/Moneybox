@@ -30,8 +30,6 @@ class AccountsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        presenter?.viewDidLoad()
         
         navigationItem.title = "User Accounts"
         
@@ -40,6 +38,10 @@ class AccountsViewController: UIViewController {
         accountsTableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil),
                                    forCellReuseIdentifier: "AccountsTableViewCell")
         accountsTableView.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.viewDidLoad()
     }
 
 }

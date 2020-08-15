@@ -13,6 +13,7 @@ protocol AccountDetailsView: class {
 
 class AccountDetailsViewController: UIViewController {
     @IBOutlet weak var backgroundOverlayView: UIView!
+    @IBOutlet weak var depositButton: UIButton!
     
     var accountDetailsPresenter: AccountDetailsPresenter?
 
@@ -22,6 +23,9 @@ class AccountDetailsViewController: UIViewController {
         accountDetailsPresenter?.viewWillAppear()
     }
     
+    @IBAction func depositButtonPressed(_ sender: Any) {
+        accountDetailsPresenter?.depositButtonPressed()
+    }
 }
 
 extension AccountDetailsViewController: AccountDetailsView {
