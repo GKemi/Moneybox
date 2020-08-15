@@ -15,7 +15,8 @@ class AccountsBuilder {
         
         let accountsNetworkClient = NetworkClient()
         let accountsInteractor = AccountsViewInteractor(networkClient: accountsNetworkClient)
-        let accountsPresenter = AccountsViewPresenter(accountsInteractor: accountsInteractor)
+        let accountsRouter = AccountsRouter(mainRouter: router, navigationController: navController)
+        let accountsPresenter = AccountsViewPresenter(accountsInteractor: accountsInteractor, accountsRouter: accountsRouter)
         
         accountsVC.presenter = accountsPresenter
         accountsPresenter.accountsView = accountsVC

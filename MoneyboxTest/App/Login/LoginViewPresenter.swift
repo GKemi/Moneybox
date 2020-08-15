@@ -28,6 +28,7 @@ class LoginViewPresenter {
 }
 
 extension LoginViewPresenter: LoginPresenter {
+
     func loginButtonPressed(with email: String?, and password: String?) {
         guard
             let email = email,
@@ -48,5 +49,5 @@ extension LoginViewPresenter: LoginPresenter {
             }
         }
     }
-    
+
 }

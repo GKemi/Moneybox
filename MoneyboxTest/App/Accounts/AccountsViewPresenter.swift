@@ -9,22 +9,26 @@ import Foundation
 import UIKit
 
 protocol AccountsPresenter {
-    func viewWillLoad()
+    func viewDidLoad()
+    func accountSelected(at index: Int)
 }
 
 class AccountsViewPresenter {
     weak var accountsView: AccountsView?
     var accountsInteractor: AccountsViewInteractor
+    var accountsRouter: AccountsRouter
     var accounts = [Account]()
     
-    init(accountsInteractor: AccountsViewInteractor) {
+    init(accountsInteractor: AccountsViewInteractor,
+         accountsRouter: AccountsRouter) {
         self.accountsInteractor = accountsInteractor
+        self.accountsRouter = accountsRouter
     }
 }
 
 extension AccountsViewPresenter: AccountsPresenter {
     
-    func viewWillLoad() {
+    func viewDidLoad() {
         
         DispatchQueue.global(qos: .background).async {
             self.accountsInteractor.fetchAccountsForUser(success: { accounts in
@@ -43,6 +47,15 @@ extension AccountsViewPresenter: AccountsPresenter {
         
     }
     
+    func accountSelected(at index: Int) {
+        accountsRouter.prepareDetails(with: accounts[index])
+        accountsRouter.route(to: .accountDetails)
+    }
+    
+}
+
+extension AccountsViewPresenter {
+    
     private func generateAccountViewModels() -> [AccountViewModel] {
         var viewModels = [AccountViewModel]()
         
@@ -50,7 +63,7 @@ extension AccountsViewPresenter: AccountsPresenter {
             let name = account.name
             let planValue = "£\(account.planValue)"
             let moneybox = "£\(account.moneybox)"
-            let accountColour = UIColor(hexString: account.colour, alpha: 0.2)
+            let accountColour = UIColor(hexString: account.colour, alpha: 0.35)
             
             let viewModel = AccountViewModel(name: name,
                              planValue: planValue,
@@ -72,4 +85,5 @@ extension AccountsViewPresenter: AccountsPresenter {
         
         return total
     }
+    
 }

@@ -31,11 +31,12 @@ class AccountsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        presenter?.viewWillLoad()
+        presenter?.viewDidLoad()
         
         navigationItem.title = "User Accounts"
         
         accountsTableView.dataSource = self
+        accountsTableView.delegate = self
         accountsTableView.register(UINib(nibName: "AccountsTableViewCell", bundle: nil),
                                    forCellReuseIdentifier: "AccountsTableViewCell")
         accountsTableView.separatorStyle = .none
@@ -54,6 +55,12 @@ extension AccountsViewController: UITableViewDataSource {
         cell.setCellContent(with: accountViewModels[indexPath.row])
         
         return cell
+    }
+}
+
+extension AccountsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.accountSelected(at: indexPath.row)
     }
 }
 
