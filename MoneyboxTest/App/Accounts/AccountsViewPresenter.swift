@@ -17,7 +17,7 @@ class AccountsViewPresenter {
     weak var accountsView: AccountsView?
     var accountsInteractor: AccountsViewInteractor
     var accountsRouter: AccountsRouter
-    var accounts = [Account]()
+    var accounts = [Account]() //Consider creating an AccountManager class–of sorts–to keep track of accounts (and also hold total plan value from the network)
     
     init(accountsInteractor: AccountsViewInteractor,
          accountsRouter: AccountsRouter) {
