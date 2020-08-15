@@ -15,27 +15,29 @@ protocol AccountsNetworkClient {
     func getAccounts(with token: String) -> Data?
 }
 
+protocol AccountDetailsNetworkClient {
+    func desposit(amount: Double, for accountID: Int, with token: String)
+}
+
 class NetworkClient {
     static var bearerToken: String = ""
 }
 
 extension NetworkClient: LoginNetworkClient {
-    
     func performSignIn(with email: String, and password: String) -> Data? {
         guard let loginURL = loginURL else { return nil }
-        var authRequest = generateDefaultRequest(with: loginURL)
+        var loginRequest = generateDefaultRequest(with: loginURL)
             
-        authRequest.httpMethod = "POST"
-        let bodyParams: [String: String] = [
+        loginRequest.httpMethod = "POST"
+        let bodyParams: [String : String] = [
             "Email" : email,
             "Password" : password,
             "Idfa" : "ANYTHING"
         ]
-        authRequest.httpBody = try! JSONSerialization.data(withJSONObject: bodyParams, options: [])
+        loginRequest.httpBody = try! JSONSerialization.data(withJSONObject: bodyParams, options: [])
         
-        return perform(request: authRequest)
+        return perform(request: loginRequest)
     }
-    
 }
 
 extension NetworkClient: AccountsNetworkClient {
@@ -48,6 +50,26 @@ extension NetworkClient: AccountsNetworkClient {
         
         return perform(request: investorRequest)
     }
+}
+
+extension NetworkClient: AccountDetailsNetworkClient {
+    
+    func desposit(amount: Double, for accountID: Int, with token: String) {
+        guard let depositURL = depositURL else { return }
+        var depositRequest = generateDefaultRequest(with: depositURL)
+        
+        depositRequest.httpMethod = "POST"
+        let bodyParams: [String : Any] = [
+            "Amount" : amount,
+            "InvestorProductId" : accountID
+        ]
+        depositRequest.httpBody = try! JSONSerialization.data(withJSONObject: bodyParams, options: [])
+        depositRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        perform(request: depositRequest)
+    }
+    
+    
 }
 
 extension NetworkClient {
@@ -72,6 +94,13 @@ extension NetworkClient {
         investorComponents.path = "/investorproducts"
         
         return investorComponents.url
+    }
+    
+    private var depositURL: URL? {
+        var depositComponents = baseURLComponents
+        depositComponents.path = "/oneoffpayments"
+        
+        return depositComponents.url
     }
     
     private func generateDefaultRequest(with url: URL) -> URLRequest {

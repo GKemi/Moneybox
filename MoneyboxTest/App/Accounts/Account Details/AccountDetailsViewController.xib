@@ -21,7 +21,19 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rt-oU-wtp">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IW-bc-6lR">
+                            <rect key="frame" x="162" y="405" width="90" height="42"/>
+                            <state key="normal" title="Add £10 "/>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="6IW-bc-6lR" secondAttribute="bottom" constant="405" id="Ov5-gg-vtP"/>
+                        <constraint firstItem="6IW-bc-6lR" firstAttribute="top" secondItem="9rt-oU-wtp" secondAttribute="top" constant="405" id="U7a-RQ-YeP"/>
+                        <constraint firstItem="6IW-bc-6lR" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="162" id="dCc-7w-gaQ"/>
+                        <constraint firstAttribute="trailing" secondItem="6IW-bc-6lR" secondAttribute="trailing" constant="162" id="fVM-Eo-dJ0"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,7 +44,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9rt-oU-wtp" secondAttribute="trailing" id="uvw-nK-DhF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="133" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
 </document>
