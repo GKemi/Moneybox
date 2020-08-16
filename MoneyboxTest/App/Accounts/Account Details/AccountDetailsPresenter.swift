@@ -16,12 +16,12 @@ protocol AccountDetailsPresenter {
 class AccountDetailsViewPresenter {
     weak var accountDetailsView: AccountDetailsView?
     
-    let account: Account
-    let accountDetailsNetworkClient: AccountDetailsNetworkClient
+    var account: Account
+    let accountDetailsInteractor: AccountDetailsInteractor
     
-    init(account: Account, accountDetailsNetworkClient: AccountDetailsNetworkClient) {
+    init(account: Account, accountDetailsInteractor: AccountDetailsInteractor) {
         self.account = account
-        self.accountDetailsNetworkClient = accountDetailsNetworkClient
+        self.accountDetailsInteractor = accountDetailsInteractor
     }
 }
 
@@ -30,9 +30,33 @@ extension AccountDetailsViewPresenter: AccountDetailsPresenter {
     func viewWillAppear() {
         let colour = UIColor(hexString: account.colour, alpha: 0.35)
         accountDetailsView?.setBackgroundColour(to: colour)
+        presentAccountDetails()
     }
     
     func depositButtonPressed() {
-        accountDetailsNetworkClient.deposit(amount: 10.0, for: account.accountID, with: UserStore.user!.bearer)
+        DispatchQueue.global(qos: .background).async {
+            self.accountDetailsInteractor.depositMoney(amount: 10.0, for: self.account, success: { account in
+                self.account = account
+                self.presentAccountDetails()
+            }, failure: {
+                print("Sorry, we can't deposit any money at the moment. Please try again later.")
+            })
+        }
+        
+    }
+}
+
+extension AccountDetailsViewPresenter {
+    private func presentAccountDetails() {
+        let viewModel = AccountDetailsViewModel(name: account.name,
+                                                planValue: account.planValue.toGBPString,
+                                                moneybox: account.moneybox.toGBPString)
+        accountDetailsView?.setAccountDetails(with: viewModel)
+    }
+}
+
+extension Double {
+    var toGBPString: String {
+        return String(format: "£%.2f", self)
     }
 }

@@ -28,7 +28,8 @@ class AccountsRouter {
             let accountDetailsVC = AccountDetailsViewController(nibName: "AccountDetailsViewController", bundle: nil)
             
             let accountDetailsNetworkClient = NetworkClient()
-            let accountDetailsPresenter = AccountDetailsViewPresenter(account: self.account!, accountDetailsNetworkClient: accountDetailsNetworkClient)
+            let accountDetailsInteractor = AccountDetailsViewInteractor(networkClient: accountDetailsNetworkClient)
+            let accountDetailsPresenter = AccountDetailsViewPresenter(account: self.account!, accountDetailsInteractor: accountDetailsInteractor)
             
             accountDetailsVC.accountDetailsPresenter = accountDetailsPresenter
             accountDetailsPresenter.accountDetailsView = accountDetailsVC

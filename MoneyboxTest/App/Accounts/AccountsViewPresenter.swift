@@ -17,7 +17,7 @@ class AccountsViewPresenter {
     weak var accountsView: AccountsView?
     var accountsInteractor: AccountsViewInteractor
     var accountsRouter: AccountsRouter
-    var accounts = [Account]() //Consider creating an AccountManager class–of sorts–to keep track of accounts (and also hold total plan value from the network)
+    var accountsCollection: AccountsCollection!
     
     init(accountsInteractor: AccountsViewInteractor,
          accountsRouter: AccountsRouter) {
@@ -31,14 +31,13 @@ extension AccountsViewPresenter: AccountsPresenter {
     func viewDidLoad() {
         
         DispatchQueue.global(qos: .background).async {
-            self.accountsInteractor.fetchAccountsForUser(success: { accounts in
+            self.accountsInteractor.fetchAccountsForUser(success: { accountsCollection in
                 self.accountsView?.setTitle(to: "Hello \(UserStore.user!.email!)!")
-                self.accounts = accounts
+                self.accountsCollection = accountsCollection
+                
+                self.accountsView?.setTotalPlanValue(to: accountsCollection.totalPlanValue.toGBPString)
                 
                 let viewModels = self.generateAccountViewModels()
-                let totalPlanValue = self.calculateTotalPlanValue()
-                 
-                self.accountsView?.setTotalPlanValue(to: "£\(totalPlanValue)")
                 self.accountsView?.displayAccounts(with: viewModels)
             }, failure: {
                 print("Unable to fetch accounts.")
@@ -48,7 +47,7 @@ extension AccountsViewPresenter: AccountsPresenter {
     }
     
     func accountSelected(at index: Int) {
-        accountsRouter.prepareDetails(with: accounts[index])
+        accountsRouter.prepareDetails(with: accountsCollection.accounts[index])
         accountsRouter.route(to: .accountDetails)
     }
     
@@ -59,10 +58,10 @@ extension AccountsViewPresenter {
     private func generateAccountViewModels() -> [AccountViewModel] {
         var viewModels = [AccountViewModel]()
         
-        for account in self.accounts {
+        for account in self.accountsCollection.accounts {
             let name = account.name
-            let planValue = "£\(account.planValue)"
-            let moneybox = "£\(account.moneybox)"
+            let planValue = account.planValue.toGBPString
+            let moneybox  = account.moneybox.toGBPString
             let accountColour = UIColor(hexString: account.colour, alpha: 0.35)
             
             let viewModel = AccountViewModel(name: name,
@@ -74,16 +73,6 @@ extension AccountsViewPresenter {
         }
         
         return viewModels
-    }
-    
-    private func calculateTotalPlanValue() -> Double {
-        var total: Double = 0
-        
-        for account in self.accounts {
-            total += account.planValue
-        }
-        
-        return total
     }
     
 }

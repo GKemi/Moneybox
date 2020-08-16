@@ -14,6 +14,9 @@
 		968908AC24E82DD5006D8236 /* AccountDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968908AA24E82DD5006D8236 /* AccountDetailsViewController.xib */; };
 		968908AE24E83B4A006D8236 /* AccountsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968908AD24E83B4A006D8236 /* AccountsRouter.swift */; };
 		968908B024E83F7E006D8236 /* AccountDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968908AF24E83F7E006D8236 /* AccountDetailsPresenter.swift */; };
+		96FE684224E93D030028C0E9 /* AccountDepositJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684124E93D030028C0E9 /* AccountDepositJSONResponse.swift */; };
+		96FE684524E93EA60028C0E9 /* AccountsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684424E93EA60028C0E9 /* AccountsCollection.swift */; };
+		96FE684724E987210028C0E9 /* AccountDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684624E987210028C0E9 /* AccountDetailsInteractor.swift */; };
 		BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */; };
 		BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */; };
 		BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */; };
@@ -43,6 +46,9 @@
 		968908AA24E82DD5006D8236 /* AccountDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsViewController.xib; sourceTree = "<group>"; };
 		968908AD24E83B4A006D8236 /* AccountsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRouter.swift; sourceTree = "<group>"; };
 		968908AF24E83F7E006D8236 /* AccountDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsPresenter.swift; sourceTree = "<group>"; };
+		96FE684124E93D030028C0E9 /* AccountDepositJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDepositJSONResponse.swift; sourceTree = "<group>"; };
+		96FE684424E93EA60028C0E9 /* AccountsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollection.swift; sourceTree = "<group>"; };
+		96FE684624E987210028C0E9 /* AccountDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsInteractor.swift; sourceTree = "<group>"; };
 		BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewPresenter.swift; sourceTree = "<group>"; };
 		BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsJSONResponse.swift; sourceTree = "<group>"; };
 		BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,8 +89,19 @@
 				968908A924E82DD5006D8236 /* AccountDetailsViewController.swift */,
 				968908AA24E82DD5006D8236 /* AccountDetailsViewController.xib */,
 				968908AF24E83F7E006D8236 /* AccountDetailsPresenter.swift */,
+				96FE684624E987210028C0E9 /* AccountDetailsInteractor.swift */,
 			);
 			path = "Account Details";
+			sourceTree = "<group>";
+		};
+		96FE684324E93E950028C0E9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				96FE684424E93EA60028C0E9 /* AccountsCollection.swift */,
+				962EB30E24E73F2F0052BFA2 /* UserStore.swift */,
+				BFB6359E24E7034F006FDAD8 /* Entities */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		BF2E53D924E2F59F0033F943 = {
@@ -109,7 +126,7 @@
 				BF2E53E524E2F59F0033F943 /* AppDelegate.swift */,
 				BFC4FE8624E45B2100349E03 /* MainRouter.swift */,
 				BFB6359F24E70359006FDAD8 /* App */,
-				BFB6359E24E7034F006FDAD8 /* Entities */,
+				96FE684324E93E950028C0E9 /* Core */,
 				BFC4FE8824E45D6600349E03 /* Network */,
 				BF2E540124E2FD150033F943 /* Miscellaneous */,
 			);
@@ -137,8 +154,8 @@
 				BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */,
 				BF164C8D24E5A7EC0023AA49 /* AccountsTableViewCell.xib */,
 				968908A424E82199006D8236 /* AccountsViewInteractor.swift */,
-				BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */,
 				968908AD24E83B4A006D8236 /* AccountsRouter.swift */,
+				BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */,
 				968908A824E82CD0006D8236 /* Account Details */,
 			);
 			path = Accounts;
@@ -158,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				BFB635A024E703A2006FDAD8 /* User.swift */,
-				962EB30E24E73F2F0052BFA2 /* UserStore.swift */,
 				968908A624E82449006D8236 /* Account.swift */,
 			);
 			path = Entities;
@@ -179,6 +195,7 @@
 				BF3EB5FA24E30B2900493CC7 /* NetworkClient.swift */,
 				BF482A5324E4528900CADD3D /* AuthenticationJSONResponse.swift */,
 				BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */,
+				96FE684124E93D030028C0E9 /* AccountDepositJSONResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -257,12 +274,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF482A5424E4528900CADD3D /* AuthenticationJSONResponse.swift in Sources */,
+				96FE684524E93EA60028C0E9 /* AccountsCollection.swift in Sources */,
 				BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */,
 				968908AE24E83B4A006D8236 /* AccountsRouter.swift in Sources */,
 				BF2E53FB24E2F9FE0033F943 /* LoginViewController.swift in Sources */,
 				BFC4FE8B24E45FBA00349E03 /* AccountsViewController.swift in Sources */,
+				96FE684724E987210028C0E9 /* AccountDetailsInteractor.swift in Sources */,
 				BFC4FE8724E45B2100349E03 /* MainRouter.swift in Sources */,
 				BFB635A324E703CC006FDAD8 /* LoginViewInteractor.swift in Sources */,
+				96FE684224E93D030028C0E9 /* AccountDepositJSONResponse.swift in Sources */,
 				BFB635A124E703A2006FDAD8 /* User.swift in Sources */,
 				BFB6359924E6F5A5006FDAD8 /* AccountsBuilder.swift in Sources */,
 				BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */,

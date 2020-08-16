@@ -8,9 +8,11 @@
 import Foundation
 
 struct AccountsJSONResponse: Decodable {
+    let totalPlanValue: Double
     let products: [ProductResponse]
     
     enum CodingKeys: String, CodingKey {
+        case totalPlanValue = "TotalPlanValue"
         case products = "ProductResponses"
     }
 }

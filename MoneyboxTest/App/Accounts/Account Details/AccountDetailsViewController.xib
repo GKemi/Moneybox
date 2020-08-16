@@ -10,8 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountDetailsViewController" customModule="MoneyboxTest" customModuleProvider="target">
             <connections>
+                <outlet property="accountNameLabel" destination="JjE-Lo-l7a" id="oCI-yp-aP0"/>
                 <outlet property="backgroundOverlayView" destination="9rt-oU-wtp" id="F4E-1m-R38"/>
                 <outlet property="depositButton" destination="6IW-bc-6lR" id="Gf8-AK-2fK"/>
+                <outlet property="moneyboxLabel" destination="5OM-yp-h6m" id="v3S-ZZ-q5k"/>
+                <outlet property="planValueLabel" destination="0y3-ty-l0q" id="xN8-jX-8ql"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,9 +26,30 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rt-oU-wtp">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjE-Lo-l7a">
+                            <rect key="frame" x="40" y="140" width="354" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moneybox" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OM-yp-h6m">
+                            <rect key="frame" x="40" y="270" width="354" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0y3-ty-l0q">
+                            <rect key="frame" x="40" y="209" width="354" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IW-bc-6lR">
-                            <rect key="frame" x="8" y="405" width="398" height="30"/>
-                            <state key="normal" title="Add £10 "/>
+                            <rect key="frame" x="119" y="402" width="175" height="30"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Add £10 ">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="depositButtonPressed:" destination="-1" eventType="touchUpInside" id="pot-na-b5a"/>
                             </connections>
@@ -33,9 +57,18 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="6IW-bc-6lR" secondAttribute="trailing" constant="8" id="HiJ-EG-xet"/>
-                        <constraint firstItem="6IW-bc-6lR" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="8" id="fKr-ax-ztw"/>
-                        <constraint firstItem="6IW-bc-6lR" firstAttribute="top" secondItem="9rt-oU-wtp" secondAttribute="top" constant="405" id="xpu-3p-4I5"/>
+                        <constraint firstItem="5OM-yp-h6m" firstAttribute="top" secondItem="0y3-ty-l0q" secondAttribute="bottom" constant="40" id="4Hg-Fb-J5w"/>
+                        <constraint firstItem="JjE-Lo-l7a" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="40" id="9Rh-kH-AdV"/>
+                        <constraint firstItem="5OM-yp-h6m" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="40" id="BF7-bG-31E"/>
+                        <constraint firstItem="6IW-bc-6lR" firstAttribute="top" secondItem="5OM-yp-h6m" secondAttribute="bottom" constant="111" id="PvY-MB-h41"/>
+                        <constraint firstItem="0y3-ty-l0q" firstAttribute="top" secondItem="JjE-Lo-l7a" secondAttribute="bottom" constant="40" id="SJo-EY-E3h"/>
+                        <constraint firstAttribute="trailing" secondItem="JjE-Lo-l7a" secondAttribute="trailing" constant="20" id="WXO-dj-0kA"/>
+                        <constraint firstItem="6IW-bc-6lR" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="119" id="Xo8-xh-NpC"/>
+                        <constraint firstItem="0y3-ty-l0q" firstAttribute="leading" secondItem="9rt-oU-wtp" secondAttribute="leading" constant="40" id="iRL-a6-LJS"/>
+                        <constraint firstAttribute="trailing" secondItem="6IW-bc-6lR" secondAttribute="trailing" constant="120" id="tIV-S7-I46"/>
+                        <constraint firstAttribute="trailing" secondItem="0y3-ty-l0q" secondAttribute="trailing" constant="20" id="vfZ-hC-0bd"/>
+                        <constraint firstAttribute="trailing" secondItem="5OM-yp-h6m" secondAttribute="trailing" constant="20" id="xed-TO-RE3"/>
+                        <constraint firstItem="JjE-Lo-l7a" firstAttribute="top" secondItem="9rt-oU-wtp" secondAttribute="top" constant="140" id="zIE-nX-HGk"/>
                     </constraints>
                 </view>
             </subviews>

@@ -16,7 +16,7 @@ protocol AccountsNetworkClient {
 }
 
 protocol AccountDetailsNetworkClient {
-    func deposit(amount: Double, for accountID: Int, with token: String)
+    func deposit(amount: Double, for accountID: Int, with token: String) -> Data?
 }
 
 class NetworkClient {
@@ -54,8 +54,8 @@ extension NetworkClient: AccountsNetworkClient {
 
 extension NetworkClient: AccountDetailsNetworkClient {
     
-    func deposit(amount: Double, for accountID: Int, with token: String) {
-        guard let depositURL = depositURL else { return }
+    func deposit(amount: Double, for accountID: Int, with token: String) -> Data? {
+        guard let depositURL = depositURL else { return nil }
         var depositRequest = generateDefaultRequest(with: depositURL)
         
         depositRequest.httpMethod = "POST"
@@ -66,7 +66,7 @@ extension NetworkClient: AccountDetailsNetworkClient {
         depositRequest.httpBody = try! JSONSerialization.data(withJSONObject: bodyParams, options: [])
         depositRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
-        perform(request: depositRequest) //Responds with updated moneybox account, so consider using that to update the account entity
+        return perform(request: depositRequest)
     }
     
     

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AccountsInteractor {
-    func fetchAccountsForUser(success: @escaping ([Account]) -> Void, failure: @escaping () -> Void)
+    func fetchAccountsForUser(success: @escaping (AccountsCollection) -> Void, failure: @escaping () -> Void)
 }
 
 class AccountsViewInteractor {
@@ -20,7 +20,7 @@ class AccountsViewInteractor {
 }
 
 extension AccountsViewInteractor: AccountsInteractor {
-    func fetchAccountsForUser(success: @escaping ([Account]) -> Void, failure: @escaping () -> Void) {
+    func fetchAccountsForUser(success: @escaping (AccountsCollection) -> Void, failure: @escaping () -> Void) {
         guard
             let bearerToken = UserStore.user?.bearer,
             let data = networkClient.getAccounts(with: bearerToken),
@@ -42,8 +42,11 @@ extension AccountsViewInteractor: AccountsInteractor {
             accounts.append(account)
         }
         
+        let collection = AccountsCollection(totalPlanValue: json.totalPlanValue,
+                                            accounts: accounts)
+        
         DispatchQueue.main.async {
-            success(accounts)
+            success(collection)
         }
     }
 }
