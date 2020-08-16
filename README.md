@@ -10,7 +10,7 @@ My general software design involves the use of MVP with a little mix of VIPER/Cl
 
 This approach may result in a somewhat larger quantity of files than typically necessary, but I specifically use the files as a means of applying the Single-Responsibility (S) principle from S.O.L.I.D. 
 
-I also employed the use of Interface Segregation by creating a single `NetworkClient` class which conforms to specific protocols for each screen/context.
+I also employed the use of Interface Segregation (I) by creating a single `NetworkClient` class which conforms to specific protocols for each screen/context.
 
 ## UI Components
 
