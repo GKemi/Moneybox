@@ -7,13 +7,6 @@
 
 import UIKit
 
-struct AccountViewModel {
-    let name: String
-    let planValue: String
-    let moneybox: String
-    let colour: UIColor
-}
-
 protocol AccountsView: class {
     func setTitle(to title: String)
     func setTotalPlanValue(to: String)

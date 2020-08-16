@@ -21,6 +21,8 @@
 		96FE684C24E98CCE0028C0E9 /* UIColor+hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684B24E98CCE0028C0E9 /* UIColor+hexString.swift */; };
 		96FE684E24E98D3E0028C0E9 /* Double+GBPString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684D24E98D3E0028C0E9 /* Double+GBPString.swift */; };
 		96FE685024E98E7D0028C0E9 /* Threading Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684F24E98E7D0028C0E9 /* Threading Functions.swift */; };
+		96FE685224E992F20028C0E9 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685124E992F20028C0E9 /* AccountViewModel.swift */; };
+		96FE685424E993070028C0E9 /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685324E993070028C0E9 /* AccountDetailsViewModel.swift */; };
 		BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */; };
 		BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */; };
 		BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */; };
@@ -57,6 +59,8 @@
 		96FE684B24E98CCE0028C0E9 /* UIColor+hexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexString.swift"; sourceTree = "<group>"; };
 		96FE684D24E98D3E0028C0E9 /* Double+GBPString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+GBPString.swift"; sourceTree = "<group>"; };
 		96FE684F24E98E7D0028C0E9 /* Threading Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Threading Functions.swift"; sourceTree = "<group>"; };
+		96FE685124E992F20028C0E9 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		96FE685324E993070028C0E9 /* AccountDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModel.swift; sourceTree = "<group>"; };
 		BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewPresenter.swift; sourceTree = "<group>"; };
 		BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsJSONResponse.swift; sourceTree = "<group>"; };
 		BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				968908AF24E83F7E006D8236 /* AccountDetailsPresenter.swift */,
 				96FE684624E987210028C0E9 /* AccountDetailsInteractor.swift */,
 				96FE684824E98BBA0028C0E9 /* AccountDetailsBuilder.swift */,
+				96FE685324E993070028C0E9 /* AccountDetailsViewModel.swift */,
 			);
 			path = "Account Details";
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 		BF2E540024E2FAC30033F943 /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
+				96FE685124E992F20028C0E9 /* AccountViewModel.swift */,
 				BFC4FE8924E45FBA00349E03 /* AccountsViewController.swift */,
 				BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */,
 				BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */,
@@ -305,6 +311,7 @@
 				96FE684924E98BBA0028C0E9 /* AccountDetailsBuilder.swift in Sources */,
 				BFB635A324E703CC006FDAD8 /* LoginViewInteractor.swift in Sources */,
 				96FE684224E93D030028C0E9 /* AccountDepositJSONResponse.swift in Sources */,
+				96FE685424E993070028C0E9 /* AccountDetailsViewModel.swift in Sources */,
 				BFB635A124E703A2006FDAD8 /* User.swift in Sources */,
 				BFB6359924E6F5A5006FDAD8 /* AccountsBuilder.swift in Sources */,
 				BF3EB5FB24E30B2900493CC7 /* NetworkClient.swift in Sources */,
@@ -315,6 +322,7 @@
 				968908AB24E82DD5006D8236 /* AccountDetailsViewController.swift in Sources */,
 				96FE685024E98E7D0028C0E9 /* Threading Functions.swift in Sources */,
 				968908A724E82449006D8236 /* Account.swift in Sources */,
+				96FE685224E992F20028C0E9 /* AccountViewModel.swift in Sources */,
 				BF2E53E624E2F59F0033F943 /* AppDelegate.swift in Sources */,
 				BF2E540724E300A00033F943 /* LoginViewPresenter.swift in Sources */,
 				968908A524E82199006D8236 /* AccountsViewInteractor.swift in Sources */,

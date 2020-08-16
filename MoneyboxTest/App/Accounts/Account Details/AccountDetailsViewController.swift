@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct AccountDetailsViewModel {
-    let name: String
-    let planValue: String
-    let moneybox: String
-}
-
 protocol AccountDetailsView: class {
     func setBackgroundColour(to colour: UIColor)
     func setAccountDetails(with viewModel: AccountDetailsViewModel)
