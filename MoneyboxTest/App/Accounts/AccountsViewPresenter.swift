@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AccountsPresenter {
-    func viewDidLoad()
+    func viewWillAppear()
     func accountSelected(at index: Int)
 }
 
@@ -28,7 +28,7 @@ class AccountsViewPresenter {
 
 extension AccountsViewPresenter: AccountsPresenter {
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         
         backgroundThread {
             self.accountsInteractor.fetchAccountsForUser(success: { accountsCollection in

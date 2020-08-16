@@ -41,7 +41,7 @@ class AccountsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        presenter?.viewDidLoad()
+        presenter?.viewWillAppear()
     }
 
 }
