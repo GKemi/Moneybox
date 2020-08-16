@@ -26,7 +26,7 @@ extension AccountDetailsViewInteractor: AccountDetailsInteractor {
             let data = networkClient.deposit(amount: amount, for: account.accountID, with: UserStore.user!.bearer),
             let json = try? JSONDecoder().decode(AccountDepositJSONResponse.self, from: data)
         else {
-            DispatchQueue.main.async {
+            mainThread {
                 failure()
             }
             return
@@ -38,7 +38,7 @@ extension AccountDetailsViewInteractor: AccountDetailsInteractor {
                           moneybox: json.updatedMoneybox,
                           colour: account.colour)
         
-        DispatchQueue.main.async {
+        mainThread {
             success(updatedAccount)
         }
     }

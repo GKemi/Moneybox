@@ -30,7 +30,7 @@ extension AccountsViewPresenter: AccountsPresenter {
     
     func viewDidLoad() {
         
-        DispatchQueue.global(qos: .background).async {
+        backgroundThread {
             self.accountsInteractor.fetchAccountsForUser(success: { accountsCollection in
                 self.accountsView?.setTitle(to: "Hello \(UserStore.user!.email!)!")
                 self.accountsCollection = accountsCollection

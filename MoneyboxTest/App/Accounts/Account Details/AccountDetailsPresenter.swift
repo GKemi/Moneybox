@@ -34,7 +34,7 @@ extension AccountDetailsViewPresenter: AccountDetailsPresenter {
     }
     
     func depositButtonPressed() {
-        DispatchQueue.global(qos: .background).async {
+        backgroundThread {
             self.accountDetailsInteractor.depositMoney(amount: 10.0, for: self.account, success: { account in
                 self.account = account
                 self.presentAccountDetails()
@@ -52,11 +52,5 @@ extension AccountDetailsViewPresenter {
                                                 planValue: account.planValue.toGBPString,
                                                 moneybox: account.moneybox.toGBPString)
         accountDetailsView?.setAccountDetails(with: viewModel)
-    }
-}
-
-extension Double {
-    var toGBPString: String {
-        return String(format: "£%.2f", self)
     }
 }

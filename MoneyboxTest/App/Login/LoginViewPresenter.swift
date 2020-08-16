@@ -40,7 +40,7 @@ extension LoginViewPresenter: LoginPresenter {
             return
         }
         
-        DispatchQueue.global(qos: .background).async {
+        backgroundThread {
             self.loginInteractor.performSignIn(with: email, and: password,
             success: {
                 self.router.route(to: .accounts)

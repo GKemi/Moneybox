@@ -25,7 +25,7 @@ extension LoginViewInteractor: LoginInteractor {
             let data = networkClient.performSignIn(with: email, and: password),
             let json = try? JSONDecoder().decode(AuthenticationJSONResponse.self, from: data)
         else {
-            DispatchQueue.main.async {
+            mainThread {
                failure()
             }
             return
@@ -33,7 +33,7 @@ extension LoginViewInteractor: LoginInteractor {
         
         UserStore.user = User(email: email, bearer: json.session.bearer)
         
-        DispatchQueue.main.async {
+        mainThread {
             success()
         }
     }

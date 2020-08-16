@@ -26,7 +26,7 @@ extension AccountsViewInteractor: AccountsInteractor {
             let data = networkClient.getAccounts(with: bearerToken),
             let json = try? JSONDecoder().decode(AccountsJSONResponse.self, from: data)
         else {
-            DispatchQueue.main.async {
+            mainThread {
                 failure()
             }
             return
@@ -45,7 +45,7 @@ extension AccountsViewInteractor: AccountsInteractor {
         let collection = AccountsCollection(totalPlanValue: json.totalPlanValue,
                                             accounts: accounts)
         
-        DispatchQueue.main.async {
+        mainThread {
             success(collection)
         }
     }
