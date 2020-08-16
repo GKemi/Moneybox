@@ -23,7 +23,7 @@
 		96FE685024E98E7D0028C0E9 /* Threading Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684F24E98E7D0028C0E9 /* Threading Functions.swift */; };
 		96FE685224E992F20028C0E9 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685124E992F20028C0E9 /* AccountViewModel.swift */; };
 		96FE685424E993070028C0E9 /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685324E993070028C0E9 /* AccountDetailsViewModel.swift */; };
-		96FE685C24E9A6F30028C0E9 /* MoneyboxUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685B24E9A6F30028C0E9 /* MoneyboxUnitTests.swift */; };
+		96FE685C24E9A6F30028C0E9 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685B24E9A6F30028C0E9 /* LoginPresenterTests.swift */; };
 		96FE686424E9A7680028C0E9 /* MockLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE686324E9A7680028C0E9 /* MockLoginView.swift */; };
 		96FE686824E9B3B70028C0E9 /* MockLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE686724E9B3B70028C0E9 /* MockLoginInteractor.swift */; };
 		BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */; };
@@ -75,7 +75,7 @@
 		96FE685124E992F20028C0E9 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		96FE685324E993070028C0E9 /* AccountDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModel.swift; sourceTree = "<group>"; };
 		96FE685924E9A6F30028C0E9 /* MoneyboxUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyboxUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96FE685B24E9A6F30028C0E9 /* MoneyboxUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyboxUnitTests.swift; sourceTree = "<group>"; };
+		96FE685B24E9A6F30028C0E9 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		96FE685D24E9A6F30028C0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96FE686324E9A7680028C0E9 /* MockLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginView.swift; sourceTree = "<group>"; };
 		96FE686724E9B3B70028C0E9 /* MockLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginInteractor.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		96FE685A24E9A6F30028C0E9 /* MoneyboxUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				96FE685B24E9A6F30028C0E9 /* MoneyboxUnitTests.swift */,
+				96FE685B24E9A6F30028C0E9 /* LoginPresenterTests.swift */,
 				96FE685D24E9A6F30028C0E9 /* Info.plist */,
 				96FE686324E9A7680028C0E9 /* MockLoginView.swift */,
 				96FE686724E9B3B70028C0E9 /* MockLoginInteractor.swift */,
@@ -369,7 +369,7 @@
 			files = (
 				96FE686424E9A7680028C0E9 /* MockLoginView.swift in Sources */,
 				96FE686824E9B3B70028C0E9 /* MockLoginInteractor.swift in Sources */,
-				96FE685C24E9A6F30028C0E9 /* MoneyboxUnitTests.swift in Sources */,
+				96FE685C24E9A6F30028C0E9 /* LoginPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

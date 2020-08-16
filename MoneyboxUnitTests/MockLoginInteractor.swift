@@ -1,6 +1,6 @@
 //
 //  MockLoginInteractor.swift
-//  MoneyboxUnitTests
+//  LoginPresenterTests
 //
 //  Created by Work on 16/08/2020.
 //

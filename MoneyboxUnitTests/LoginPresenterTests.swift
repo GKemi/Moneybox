@@ -1,6 +1,6 @@
 //
-//  MoneyboxUnitTests.swift
-//  MoneyboxUnitTests
+//  LoginPresenterTests.swift
+//  LoginPresenterTests
 //
 //  Created by Work on 16/08/2020.
 //
@@ -8,12 +8,19 @@
 import XCTest
 @testable import MoneyboxTest
 
-class MoneyboxUnitTests: XCTestCase {
+class LoginPresenterTests: XCTestCase {
+    var loginView: MockLoginView!
+    var loginInteractor: MockLoginInteractor
+    var loginPresenter: LoginViewPresenter!
+    
+    override func setUp() {
+        loginView = MockLoginView()
+        loginInteractor = MockLoginInteractor()
+        loginPresenter = LoginViewPresenter(router: MainRouter(window: UIWindow()), loginInteractor: loginInteractor)
+        loginPresenter.loginView = loginView
+    }
 
     func testLoginViewDisplaysErrorMessage_whenUserEntersIncompleteDetails() {
-        let loginView = MockLoginView()
-        let loginPresenter = LoginViewPresenter(router: MainRouter(window: UIWindow()), loginInteractor: MockLoginInteractor())
-        loginPresenter.loginView = loginView
         
         //When presenter is given empty sign-in details
         loginPresenter.loginButtonPressed(with: "", and: "")
@@ -23,11 +30,8 @@ class MoneyboxUnitTests: XCTestCase {
     }
     
     func testLoginViewDisplaysErrorMessage_whenSignInFails() {
-        let loginView = MockLoginView()
-        let loginPresenter = LoginViewPresenter(router: MainRouter(window: UIWindow()), loginInteractor: MockLoginInteractor())
-        loginPresenter.loginView = loginView
-        
-        //Given network client will return a nil data value
+        //Given interactor is set to invoke sign-in failure
+        loginInteractor.signInWillSucceed = false
         
         //When presenter is given correct sign-in details
         loginPresenter.loginButtonPressed(with: "hello@gmail.com", and: "password")
@@ -35,5 +39,6 @@ class MoneyboxUnitTests: XCTestCase {
         //Then view displays error message due to failed sign-in
         XCTAssertEqual(loginView.failureMessage, "Sorry, we couldn't sign you in at the moment. Please double-check your details and try again later.")
     }
-
+    
+    
 }
