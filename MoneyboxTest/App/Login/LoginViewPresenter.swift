@@ -36,18 +36,16 @@ extension LoginViewPresenter: LoginPresenter {
             !email.isEmpty,
             !password.isEmpty
         else {
-            print("Please fill in some sign in details")
+            loginView?.displaySignInUnavailableMessage(with: "Please fill in the email and password fields to continue.")
             return
         }
         
-        backgroundThread {
-            self.loginInteractor.performSignIn(with: email, and: password,
-            success: {
-                self.router.route(to: .accounts)
-            }) {
-                print("Sorry, we couldn't sign you in at the moment. Please try again later.")
-            }
+        loginInteractor.performSignIn(with: email, and: password,
+        success: {
+            self.router.route(to: .accounts)
+        }) {
+            self.loginView?.displaySignInUnavailableMessage(with: "Sorry, we couldn't sign you in at the moment. Please double-check your details and try again later.")
         }
     }
-
 }
+

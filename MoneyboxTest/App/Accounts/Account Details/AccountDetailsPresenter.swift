@@ -34,16 +34,16 @@ extension AccountDetailsViewPresenter: AccountDetailsPresenter {
     }
     
     func depositButtonPressed() {
-        backgroundThread {
-            self.accountDetailsInteractor.depositMoney(amount: 10.0, for: self.account, success: { account in
-                self.account = account
-                self.presentAccountDetails()
-            }, failure: {
-                print("Sorry, we can't deposit any money at the moment. Please try again later.")
-            })
-        }
-        
+
+        accountDetailsInteractor.depositMoney(amount: 10.0, for: self.account, success: { account in
+            self.account = account
+            self.presentAccountDetails()
+        }, failure: {
+            print("Sorry, we can't deposit any money at the moment. Please try again later.")
+        })
+
     }
+    
 }
 
 extension AccountDetailsViewPresenter {

@@ -23,6 +23,9 @@
 		96FE685024E98E7D0028C0E9 /* Threading Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684F24E98E7D0028C0E9 /* Threading Functions.swift */; };
 		96FE685224E992F20028C0E9 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685124E992F20028C0E9 /* AccountViewModel.swift */; };
 		96FE685424E993070028C0E9 /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685324E993070028C0E9 /* AccountDetailsViewModel.swift */; };
+		96FE685C24E9A6F30028C0E9 /* MoneyboxUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE685B24E9A6F30028C0E9 /* MoneyboxUnitTests.swift */; };
+		96FE686424E9A7680028C0E9 /* MockLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE686324E9A7680028C0E9 /* MockLoginView.swift */; };
+		96FE686824E9B3B70028C0E9 /* MockLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE686724E9B3B70028C0E9 /* MockLoginInteractor.swift */; };
 		BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */; };
 		BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */; };
 		BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */; };
@@ -44,6 +47,16 @@
 		BFC4FE8C24E45FBA00349E03 /* AccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		96FE685E24E9A6F30028C0E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF2E53DA24E2F59F0033F943 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF2E53E124E2F59F0033F943;
+			remoteInfo = MoneyboxTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		962EB30E24E73F2F0052BFA2 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		968908A424E82199006D8236 /* AccountsViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewInteractor.swift; sourceTree = "<group>"; };
@@ -61,6 +74,11 @@
 		96FE684F24E98E7D0028C0E9 /* Threading Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Threading Functions.swift"; sourceTree = "<group>"; };
 		96FE685124E992F20028C0E9 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		96FE685324E993070028C0E9 /* AccountDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModel.swift; sourceTree = "<group>"; };
+		96FE685924E9A6F30028C0E9 /* MoneyboxUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyboxUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96FE685B24E9A6F30028C0E9 /* MoneyboxUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyboxUnitTests.swift; sourceTree = "<group>"; };
+		96FE685D24E9A6F30028C0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96FE686324E9A7680028C0E9 /* MockLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginView.swift; sourceTree = "<group>"; };
+		96FE686724E9B3B70028C0E9 /* MockLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginInteractor.swift; sourceTree = "<group>"; };
 		BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewPresenter.swift; sourceTree = "<group>"; };
 		BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsJSONResponse.swift; sourceTree = "<group>"; };
 		BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		96FE685624E9A6F30028C0E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF2E53DF24E2F59F0033F943 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,10 +153,22 @@
 			path = "Extensions & Helpers";
 			sourceTree = "<group>";
 		};
+		96FE685A24E9A6F30028C0E9 /* MoneyboxUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				96FE685B24E9A6F30028C0E9 /* MoneyboxUnitTests.swift */,
+				96FE685D24E9A6F30028C0E9 /* Info.plist */,
+				96FE686324E9A7680028C0E9 /* MockLoginView.swift */,
+				96FE686724E9B3B70028C0E9 /* MockLoginInteractor.swift */,
+			);
+			path = MoneyboxUnitTests;
+			sourceTree = "<group>";
+		};
 		BF2E53D924E2F59F0033F943 = {
 			isa = PBXGroup;
 			children = (
 				BF2E53E424E2F59F0033F943 /* MoneyboxTest */,
+				96FE685A24E9A6F30028C0E9 /* MoneyboxUnitTests */,
 				BF2E53E324E2F59F0033F943 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				BF2E53E224E2F59F0033F943 /* MoneyboxTest.app */,
+				96FE685924E9A6F30028C0E9 /* MoneyboxUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,13 +211,13 @@
 			isa = PBXGroup;
 			children = (
 				96FE685124E992F20028C0E9 /* AccountViewModel.swift */,
+				968908AD24E83B4A006D8236 /* AccountsRouter.swift */,
+				968908A424E82199006D8236 /* AccountsViewInteractor.swift */,
+				BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */,
 				BFC4FE8924E45FBA00349E03 /* AccountsViewController.swift */,
 				BFC4FE8A24E45FBA00349E03 /* AccountsViewController.xib */,
-				BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */,
 				BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */,
 				BF164C8D24E5A7EC0023AA49 /* AccountsTableViewCell.xib */,
-				968908A424E82199006D8236 /* AccountsViewInteractor.swift */,
-				968908AD24E83B4A006D8236 /* AccountsRouter.swift */,
 				BFB6359824E6F5A5006FDAD8 /* AccountsBuilder.swift */,
 				968908A824E82CD0006D8236 /* Account Details */,
 			);
@@ -229,6 +267,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		96FE685824E9A6F30028C0E9 /* MoneyboxUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96FE686024E9A6F30028C0E9 /* Build configuration list for PBXNativeTarget "MoneyboxUnitTests" */;
+			buildPhases = (
+				96FE685524E9A6F30028C0E9 /* Sources */,
+				96FE685624E9A6F30028C0E9 /* Frameworks */,
+				96FE685724E9A6F30028C0E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96FE685F24E9A6F30028C0E9 /* PBXTargetDependency */,
+			);
+			name = MoneyboxUnitTests;
+			productName = MoneyboxUnitTests;
+			productReference = 96FE685924E9A6F30028C0E9 /* MoneyboxUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BF2E53E124E2F59F0033F943 /* MoneyboxTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF2E53F624E2F5A00033F943 /* Build configuration list for PBXNativeTarget "MoneyboxTest" */;
@@ -252,9 +308,13 @@
 		BF2E53DA24E2F59F0033F943 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					96FE685824E9A6F30028C0E9 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = BF2E53E124E2F59F0033F943;
+					};
 					BF2E53E124E2F59F0033F943 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -274,11 +334,19 @@
 			projectRoot = "";
 			targets = (
 				BF2E53E124E2F59F0033F943 /* MoneyboxTest */,
+				96FE685824E9A6F30028C0E9 /* MoneyboxUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		96FE685724E9A6F30028C0E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF2E53E024E2F59F0033F943 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +363,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		96FE685524E9A6F30028C0E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96FE686424E9A7680028C0E9 /* MockLoginView.swift in Sources */,
+				96FE686824E9B3B70028C0E9 /* MockLoginInteractor.swift in Sources */,
+				96FE685C24E9A6F30028C0E9 /* MoneyboxUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF2E53DE24E2F59F0033F943 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +411,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		96FE685F24E9A6F30028C0E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF2E53E124E2F59F0033F943 /* MoneyboxTest */;
+			targetProxy = 96FE685E24E9A6F30028C0E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BF2E53F024E2F5A00033F943 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -345,6 +431,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		96FE686124E9A6F30028C0E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 557352Y7V9;
+				INFOPLIST_FILE = MoneyboxUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gilhakemi.MoneyboxUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyboxTest.app/MoneyboxTest";
+			};
+			name = Debug;
+		};
+		96FE686224E9A6F30028C0E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 557352Y7V9;
+				INFOPLIST_FILE = MoneyboxUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gilhakemi.MoneyboxUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyboxTest.app/MoneyboxTest";
+			};
+			name = Release;
+		};
 		BF2E53F424E2F5A00033F943 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -504,6 +632,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		96FE686024E9A6F30028C0E9 /* Build configuration list for PBXNativeTarget "MoneyboxUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96FE686124E9A6F30028C0E9 /* Debug */,
+				96FE686224E9A6F30028C0E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BF2E53DD24E2F59F0033F943 /* Build configuration list for PBXProject "MoneyboxTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

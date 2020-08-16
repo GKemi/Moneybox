@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginView: class {
-    
+    func displaySignInUnavailableMessage(with message: String)
 }
 
 class LoginViewController: UIViewController {
@@ -28,5 +28,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginView {
+    func displaySignInUnavailableMessage(with message: String) {
+        let alert = UIAlertController(title: "Sign in failed", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
     
 }

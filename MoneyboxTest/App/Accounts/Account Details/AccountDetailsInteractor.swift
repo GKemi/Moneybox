@@ -22,24 +22,26 @@ class AccountDetailsViewInteractor {
 extension AccountDetailsViewInteractor: AccountDetailsInteractor {
     
     func depositMoney(amount: Double, for account: Account, success: @escaping (Account) -> Void, failure: @escaping () -> Void) {
-        guard
-            let data = networkClient.deposit(amount: amount, for: account.accountID, with: UserStore.user!.bearer),
-            let json = try? JSONDecoder().decode(AccountDepositJSONResponse.self, from: data)
-        else {
-            mainThread {
-                failure()
+        backgroundThread {
+            guard
+                let data = self.networkClient.deposit(amount: amount, for: account.accountID, with: UserStore.user!.bearer),
+                let json = try? JSONDecoder().decode(AccountDepositJSONResponse.self, from: data)
+                else {
+                    mainThread {
+                        failure()
+                    }
+                    return
             }
-            return
-        }
-        
-        let updatedAccount = Account(accountID: account.accountID,
-                          name: account.name,
-                          planValue: account.planValue,
-                          moneybox: json.updatedMoneybox,
-                          colour: account.colour)
-        
-        mainThread {
-            success(updatedAccount)
+            
+            let updatedAccount = Account(accountID: account.accountID,
+                                         name: account.name,
+                                         planValue: account.planValue,
+                                         moneybox: json.updatedMoneybox,
+                                         colour: account.colour)
+            
+            mainThread {
+                success(updatedAccount)
+            }
         }
     }
 

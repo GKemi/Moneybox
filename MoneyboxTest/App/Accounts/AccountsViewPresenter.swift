@@ -30,21 +30,20 @@ extension AccountsViewPresenter: AccountsPresenter {
     
     func viewWillAppear() {
         
-        backgroundThread {
-            self.accountsInteractor.fetchAccountsForUser(success: { accountsCollection in
-                self.accountsView?.setTitle(to: "Hello \(UserStore.user!.email!)!")
-                self.accountsCollection = accountsCollection
-                
-                self.accountsView?.setTotalPlanValue(to: accountsCollection.totalPlanValue.toGBPString)
-                
-                let viewModels = self.generateAccountViewModels()
-                self.accountsView?.displayAccounts(with: viewModels)
-            }, failure: {
-                print("Unable to fetch accounts.")
-            })
-        }
+        accountsInteractor.fetchAccountsForUser(success: { accountsCollection in
+            self.accountsView?.setTitle(to: "Hello \(UserStore.user!.email!)!")
+            self.accountsCollection = accountsCollection
+            
+            self.accountsView?.setTotalPlanValue(to: accountsCollection.totalPlanValue.toGBPString)
+            
+            let viewModels = self.generateAccountViewModels()
+            self.accountsView?.displayAccounts(with: viewModels)
+        }, failure: {
+            print("Unable to fetch accounts.")
+        })
         
     }
+        
     
     func accountSelected(at index: Int) {
         accountsRouter.prepareDetails(with: accountsCollection.accounts[index])

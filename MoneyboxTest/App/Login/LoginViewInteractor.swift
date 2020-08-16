@@ -20,21 +20,25 @@ class LoginViewInteractor {
 }
 
 extension LoginViewInteractor: LoginInteractor {
+    
     func performSignIn(with email: String, and password: String, success: @escaping () -> Void, failure: @escaping () -> Void) {
-        guard
-            let data = networkClient.performSignIn(with: email, and: password),
-            let json = try? JSONDecoder().decode(AuthenticationJSONResponse.self, from: data)
-        else {
-            mainThread {
-               failure()
+        backgroundThread {
+            guard
+                let data = self.networkClient.performSignIn(with: email, and: password),
+                let json = try? JSONDecoder().decode(AuthenticationJSONResponse.self, from: data)
+                else {
+                mainThread {
+                    failure()
+                }
+                return
             }
-            return
-        }
-        
-        UserStore.user = User(email: email, bearer: json.session.bearer)
-        
-        mainThread {
-            success()
+            
+            UserStore.user = User(email: email, bearer: json.session.bearer)
+            
+            mainThread {
+                success()
+            }
         }
     }
+    
 }
