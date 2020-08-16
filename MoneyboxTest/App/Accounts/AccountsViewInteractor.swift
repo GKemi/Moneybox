@@ -26,11 +26,11 @@ extension AccountsViewInteractor: AccountsInteractor {
                 let bearerToken = UserStore.user?.bearer,
                 let data = self.networkClient.getAccounts(with: bearerToken),
                 let json = try? JSONDecoder().decode(AccountsJSONResponse.self, from: data)
-                else {
-                    mainThread {
-                        failure()
-                    }
-                    return
+            else {
+                mainThread {
+                    failure()
+                }
+                return
             }
             
             var accounts = [Account]()

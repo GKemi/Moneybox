@@ -10,7 +10,7 @@ import XCTest
 
 class LoginPresenterTests: XCTestCase {
     var loginView: MockLoginView!
-    var loginInteractor: MockLoginInteractor
+    var loginInteractor: MockLoginInteractor!
     var loginPresenter: LoginViewPresenter!
     
     override func setUp() {
