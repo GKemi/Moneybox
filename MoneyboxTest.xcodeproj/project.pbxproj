@@ -17,6 +17,7 @@
 		96FE684224E93D030028C0E9 /* AccountDepositJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684124E93D030028C0E9 /* AccountDepositJSONResponse.swift */; };
 		96FE684524E93EA60028C0E9 /* AccountsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684424E93EA60028C0E9 /* AccountsCollection.swift */; };
 		96FE684724E987210028C0E9 /* AccountDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684624E987210028C0E9 /* AccountDetailsInteractor.swift */; };
+		96FE684924E98BBA0028C0E9 /* AccountDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE684824E98BBA0028C0E9 /* AccountDetailsBuilder.swift */; };
 		BF164C8924E596BE0023AA49 /* AccountsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */; };
 		BF164C8B24E599620023AA49 /* AccountsJSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */; };
 		BF164C8E24E5A7EC0023AA49 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */; };
@@ -49,6 +50,7 @@
 		96FE684124E93D030028C0E9 /* AccountDepositJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDepositJSONResponse.swift; sourceTree = "<group>"; };
 		96FE684424E93EA60028C0E9 /* AccountsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollection.swift; sourceTree = "<group>"; };
 		96FE684624E987210028C0E9 /* AccountDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsInteractor.swift; sourceTree = "<group>"; };
+		96FE684824E98BBA0028C0E9 /* AccountDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsBuilder.swift; sourceTree = "<group>"; };
 		BF164C8824E596BE0023AA49 /* AccountsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewPresenter.swift; sourceTree = "<group>"; };
 		BF164C8A24E599620023AA49 /* AccountsJSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsJSONResponse.swift; sourceTree = "<group>"; };
 		BF164C8C24E5A7EC0023AA49 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				968908AA24E82DD5006D8236 /* AccountDetailsViewController.xib */,
 				968908AF24E83F7E006D8236 /* AccountDetailsPresenter.swift */,
 				96FE684624E987210028C0E9 /* AccountDetailsInteractor.swift */,
+				96FE684824E98BBA0028C0E9 /* AccountDetailsBuilder.swift */,
 			);
 			path = "Account Details";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				BFC4FE8B24E45FBA00349E03 /* AccountsViewController.swift in Sources */,
 				96FE684724E987210028C0E9 /* AccountDetailsInteractor.swift in Sources */,
 				BFC4FE8724E45B2100349E03 /* MainRouter.swift in Sources */,
+				96FE684924E98BBA0028C0E9 /* AccountDetailsBuilder.swift in Sources */,
 				BFB635A324E703CC006FDAD8 /* LoginViewInteractor.swift in Sources */,
 				96FE684224E93D030028C0E9 /* AccountDepositJSONResponse.swift in Sources */,
 				BFB635A124E703A2006FDAD8 /* User.swift in Sources */,

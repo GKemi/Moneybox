@@ -25,15 +25,7 @@ class AccountsRouter {
     func route(to destination: AccountsRouterDestination) {
         switch destination {
         case .accountDetails:
-            let accountDetailsVC = AccountDetailsViewController(nibName: "AccountDetailsViewController", bundle: nil)
-            
-            let accountDetailsNetworkClient = NetworkClient()
-            let accountDetailsInteractor = AccountDetailsViewInteractor(networkClient: accountDetailsNetworkClient)
-            let accountDetailsPresenter = AccountDetailsViewPresenter(account: self.account!, accountDetailsInteractor: accountDetailsInteractor)
-            
-            accountDetailsVC.accountDetailsPresenter = accountDetailsPresenter
-            accountDetailsPresenter.accountDetailsView = accountDetailsVC
-            
+            let accountDetailsVC = AccountDetailsBuilder.build(with: account!)
             navigationController.pushViewController(accountDetailsVC, animated: true)
         }
     }
